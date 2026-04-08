@@ -1,0 +1,1153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chathunga Bimsara | Software Engineer</title>
+    <link rel="icon" href="assest/Website Logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:wght@400;700&family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Background Effects -->
+    <div class="bg-effects" id="bgEffects">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Header -->
+    <header class="header" id="navbar">
+        <a href="#hero" class="nav-logo">
+            <span class="logo-box"><img src="assest/CB Logo.png" alt="Logo" /></span>
+            <span class="logo-name">Chathunga <strong>Bimsara</strong></span>
+        </a>
+
+        <nav class="navbar-links" id="navbarLinks">
+            <a href="#hero" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#assignments" class="nav-link">Assignments</a>
+            <a href="#gallery" class="nav-link">Gallery</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="header-right">
+            <div class="toggles-wrapper">
+                <button class="music-toggle" id="musicToggle" aria-label="Toggle Music">
+                    <i class="fa-solid fa-volume-xmark"></i>
+                </button>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="section-wrap">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <div class="hero-tag">
+                        <span class="tag-dot"></span>Available for Opportunities
+                    </div>
+                    <h1 class="hero-name">
+                        <span class="name-gradient">Chathunga Bimsara</span>
+                    </h1>
+                    <p class="hero-role">
+                        I'm a
+                        <span class="role-text" id="roleText">Software Engineer</span><span
+                            class="cursor-blink">|</span>
+                    </p>
+                    <p class="hero-desc">
+                        Undergraduate Software Engineer at IJSE, Sri Lanka. Passionate
+                        about crafting elegant, functional software — from pixel-perfect
+                        frontends to robust backend systems.
+                    </p>
+
+                    <div class="hero-socials">
+                        <a href="https://www.linkedin.com/in/chathunga-bimsara-02a728387/" target="_blank"
+                            class="hsoc linkedin" data-name="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/chathunga2007" target="_blank" class="hsoc github"
+                            data-name="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://web.facebook.com/profile.php?id=61571681231357" target="_blank"
+                            class="hsoc facebook" data-name="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/@chathungabimsara2007" target="_blank" class="hsoc youtube"
+                            data-name="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/chathunga200711/" target="_blank" class="hsoc instagram"
+                            data-name="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://x.com/ChathungaB2007" target="_blank" class="hsoc twitter"
+                            data-name="X/Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+
+                    <div class="hero-btns">
+                        <a href="assest/Chathunga Bimsara CV.pdf" download class="btn-primary"><i
+                                class="fa-solid fa-download"></i> Download CV</a>
+                        <a href="#contact" class="btn-outline"><i class="fa-solid fa-paper-plane"></i> Get In Touch</a>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="hero-photo-wrap">
+                        <div class="photo-ring-outer">
+                            <div class="ring-dot"></div>
+                            <div class="ring-dot"></div>
+                            <div class="ring-dot"></div>
+                            <div class="ring-dot"></div>
+                        </div>
+                        <div class="photo-ring-middle"></div>
+                        <div class="hero-photo">
+                            <img src="assest/CB Logo.png" alt="Chathunga Bimsara" onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  " />
+                            <div class="photo-fallback">👨‍💻</div>
+                        </div>
+                        <div class="float-icon"><i class="fa-brands fa-java"></i></div>
+                        <div class="float-icon"><i class="fa-brands fa-python"></i></div>
+                        <div class="float-icon"><i class="fa-brands fa-html5"></i></div>
+                        <div class="float-icon"><i class="fa-solid fa-database"></i></div>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hstat">
+                            <span class="hstat-num" data-count="3">0</span>+<span class="hstat-label">Projects</span>
+                        </div>
+                        <div class="hstat">
+                            <span class="hstat-num" data-count="7">0</span>+<span class="hstat-label">Tech Skills</span>
+                        </div>
+                        <div class="hstat">
+                            <span class="hstat-num" data-count="12">0</span><span class="hstat-label">Assignments</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-wrap">
+            <div class="section-label">// About Me</div>
+            <h2 class="section-title">Who <span class="grad-text">I Am</span></h2>
+
+            <div class="about-grid">
+                <div class="about-photo-col reveal">
+                    <div class="about-photo-frame">
+                        <img src="assest/My Photo 2.jpg" alt="Chathunga Bimsara" onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'flex';
+                " />
+                        <div class="photo-placeholder">👨‍💻</div>
+                        <div class="about-photo-overlay"></div>
+                    </div>
+                    <div class="about-deco-box"></div>
+                    <div class="about-badge-card">
+                        <span class="badge-icon">🚀</span><span>Open to Work</span>
+                    </div>
+                </div>
+
+                <div class="about-text-col reveal">
+                    <h3>
+                        Undergraduate Software Engineer & Aspiring Full Stack Developer
+                    </h3>
+                    <p class="about-bio">
+                        Hello! I'm Chathunga Bimsara from Galle, Sri Lanka. I began my
+                        Software Engineering journey in 2025 at IJSE, where I've been
+                        dedicating my time to learning, practicing, and building a strong
+                        foundation in software development.<br /><br />I'm driven by
+                        curiosity and a love for clean, functional code. From crafting
+                        pixel-perfect frontends to architecting backend systems, I bring
+                        passion and precision to everything I build.
+                    </p>
+
+                    <div class="about-details-grid">
+                        <div class="detail-card">
+                            <span class="dc-label">Name</span><span class="dc-val">Chathunga Bimsara</span>
+                        </div>
+                        <div class="detail-card">
+                            <span class="dc-label">Date of Birth</span><span class="dc-val">November 02, 2007</span>
+                        </div>
+                        <div class="detail-card">
+                            <span class="dc-label">Address</span><span class="dc-val">Ampegama, Galle, Sri Lanka</span>
+                        </div>
+                        <div class="detail-card">
+                            <span class="dc-label">Phone</span><span class="dc-val">+94 76 794 5968</span>
+                        </div>
+                        <div class="detail-card full">
+                            <span class="dc-label">Email</span><span
+                                class="dc-val">wggachathungabimsara2007@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="about-action-row">
+                        <a href="#projects" class="btn-primary"><i class="fa-solid fa-code"></i> View Projects</a>
+                        <a href="#contact" class="btn-outline"><i class="fa-solid fa-envelope"></i> Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-wrap">
+            <div class="section-label">// What I Offer</div>
+            <h2 class="section-title">
+                My <span class="grad-text">Services</span>
+            </h2>
+            <p class="section-sub">
+                Professional services I provide to bring your ideas to life
+            </p>
+
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>
+                        Building responsive and modern websites using HTML, CSS,
+                        JavaScript with clean code and optimal performance.
+                    </p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fa-brands fa-java"></i></div>
+                    <h3>Java Applications</h3>
+                    <p>
+                        Developing robust desktop and terminal applications using Java
+                        with OOP principles and best practices.
+                    </p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fa-solid fa-database"></i></div>
+                    <h3>Database Design</h3>
+                    <p>
+                        Creating efficient database structures with SQL and PostgreSQL for
+                        optimized data management.
+                    </p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>
+                        Crafting pixel-perfect, mobile-first designs that look stunning on
+                        all devices and screen sizes.
+                    </p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
+                    <h3>UI/UX Design</h3>
+                    <p>
+                        Designing intuitive user interfaces with focus on user experience
+                        and modern aesthetics.
+                    </p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fa-brands fa-github"></i></div>
+                    <h3>Open Source</h3>
+                    <p>
+                        Contributing to open source projects and building collaborative
+                        solutions. Check my
+                        <a href="https://github.com/chathunga2007" target="_blank">GitHub</a>
+                        for more.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-wrap">
+            <div class="section-label">// Technical Skills</div>
+            <h2 class="section-title">Key <span class="grad-text">Skills</span></h2>
+
+            <div class="skills-tabs">
+                <button class="skill-tab-btn active" data-tab="languages">
+                    Languages
+                </button>
+                <button class="skill-tab-btn" data-tab="tools">Tools</button>
+                <button class="skill-tab-btn" data-tab="database">Databases</button>
+                <button class="skill-tab-btn" data-tab="design">Design</button>
+            </div>
+
+            <div class="skills-content active" id="languages">
+                <div class="skills-grid">
+                    <div class="skill-card reveal">
+                        <div class="skill-icon-wrap">
+                            <img src="assest/Skills/java_5968282.png" alt="Java" onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'block';
+                  " /><span class="skill-emoji" style="display: none">☕</span>
+                        </div>
+                        <span class="skill-name">Java</span><span class="skill-percentage">95%</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <div class="skill-icon-wrap">
+                            <img src="assest/Skills/python_5968350.png" alt="Python" onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'block';
+                  " /><span class="skill-emoji" style="display: none">🐍</span>
+                        </div>
+                        <span class="skill-name">Python</span><span class="skill-percentage">75%</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <div class="skill-icon-wrap">
+                            <img src="assest/Skills/javascript.png" alt="JavaScript" onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'block';
+                  " /><span class="skill-emoji" style="display: none">⚡</span>
+                        </div>
+                        <span class="skill-name">JavaScript</span><span class="skill-percentage">85%</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <div class="skill-icon-wrap">
+                            <img src="assest/Skills/sql_7506880.png" alt="SQL" onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'block';
+                  " /><span class="skill-emoji" style="display: none">🗄️</span>
+                        </div>
+                        <span class="skill-name">SQL</span><span class="skill-percentage">80%</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <div class="skill-icon-wrap">
+                            <img src="assest/Skills/html-5_5968267.png" alt="HTML5" onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'block';
+                  " /><span class="skill-emoji" style="display: none">🌐</span>
+                        </div>
+                        <span class="skill-name">HTML5</span><span class="skill-percentage">90%</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <div class="skill-icon-wrap">
+                            <img src="assest/Skills/css-3_5968242.png" alt="CSS3" onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'block';
+                  " /><span class="skill-emoji" style="display: none">🎨</span>
+                        </div>
+                        <span class="skill-name">CSS</span><span class="skill-percentage">90%</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="90"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-content" id="tools">
+                <div class="skills-grid">
+                    <div class="skill-card reveal">
+                        <div class="skill-icon-wrap">
+                            <img src="assest/Skills/github.png" alt="GitHub" onerror="
+                    this.outerHTML = '<span class=\'skill-emoji\'>📦</span>'
+                  " />
+                        </div>
+                        <span class="skill-name">GitHub</span><span class="skill-percentage">90%</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <div class="skill-icon-wrap">
+                            <img src="assest/Skills/git.png" alt="Git" onerror="
+                    this.outerHTML = '<span class=\'skill-emoji\'>🌱</span>'
+                  " />
+                        </div>
+                        <span class="skill-name">Git</span><span class="skill-percentage">85%</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <div class="skill-icon-wrap">
+                            <img src="assest/Skills/docker_919853.png" alt="Docker" onerror="
+                    this.outerHTML = '<span class=\'skill-emoji\'>🐳</span>'
+                  " />
+                        </div>
+                        <span class="skill-name">Docker</span><span class="skill-percentage">65%</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="65"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <div class="skill-icon-wrap">
+                            <img src="assest/Skills/vscode.png" alt="VS Code" onerror="
+                    this.outerHTML = '<span class=\'skill-emoji\'>💻</span>'
+                  " />
+                        </div>
+                        <span class="skill-name">VS Code</span><span class="skill-percentage">90%</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <div class="skill-icon-wrap">
+                            <img src="assest/Skills/intelijidea.png" alt="IntelliJ IDEA" onerror="
+                    this.outerHTML = '<span class=\'skill-emoji\'>🧠</span>'
+                  " />
+                        </div>
+                        <span class="skill-name">IntelliJ IDEA</span><span class="skill-percentage">85%</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="85"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-content" id="database">
+                <div class="skills-grid">
+                    <div class="skill-card reveal">
+                        <div class="skill-icon-wrap">
+                            <img src="assest/Skills/mysql.png" alt="MySQL" onerror="
+                    this.outerHTML = '<span class=\'skill-emoji\'>🐬</span>'
+                  " />
+                        </div>
+                        <span class="skill-name">MySQL</span><span class="skill-percentage">95%</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <div class="skill-icon-wrap">
+                            <img src="assest/Skills/postgre_5968342.png" alt="PostgreSQL" onerror="
+                    this.outerHTML = '<span class=\'skill-emoji\'>🐘</span>'
+                  " />
+                        </div>
+                        <span class="skill-name">PostgreSQL</span><span class="skill-percentage">70%</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="70"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-content" id="design">
+                <div class="skills-grid">
+                    <div class="skill-card reveal">
+                        <div class="skill-icon-wrap">
+                            <img src="assest/Skills/figma.png" alt="Figma" onerror="
+                    this.outerHTML = '<span class=\'skill-emoji\'>🎨</span>'
+                  " />
+                        </div>
+                        <span class="skill-name">Figma</span><span class="skill-percentage">85%</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <div class="skill-icon-wrap">
+                            <img src="assest/Skills/photoshop.png" alt="Photoshop" onerror="
+                    this.outerHTML = '<span class=\'skill-emoji\'>🖼️</span>'
+                  " />
+                        </div>
+                        <span class="skill-name">Adobe Photoshop</span><span class="skill-percentage">70%</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <div class="skill-icon-wrap">
+                            <img src="assest/Skills/PremierePro.png" alt="Premiere Pro" onerror="
+                    this.outerHTML = '<span class=\'skill-emoji\'>🎬</span>'
+                  " />
+                        </div>
+                        <span class="skill-name">Adobe Premiere Pro</span><span class="skill-percentage">80%</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="80"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="section-wrap">
+            <div class="section-label">// Career Journey</div>
+            <h2 class="section-title">
+                Work <span class="grad-text">Experience</span>
+            </h2>
+            <p class="section-sub">
+                My professional journey and hands-on experience
+            </p>
+
+            <div class="exp-timeline">
+                <div class="exp-item reveal">
+                    <div class="exp-dot"></div>
+                    <div class="exp-card">
+                        <div class="exp-header">
+                            <div>
+                                <h3 class="exp-title">Freelance Web Developer</h3>
+                                <p class="exp-company">Self-Employed</p>
+                            </div>
+                            <span class="exp-year">2025 - Present</span>
+                        </div>
+                        <p class="exp-desc">
+                            Building modern, responsive websites for clients. Focused on
+                            clean code, optimal performance, and user-centric design
+                            principles.
+                        </p>
+                        <div class="exp-tags">
+                            <span class="exp-tag">HTML/CSS</span><span class="exp-tag">JavaScript</span><span
+                                class="exp-tag">Responsive Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exp-item reveal">
+                    <div class="exp-dot"></div>
+                    <div class="exp-card">
+                        <div class="exp-header">
+                            <div>
+                                <h3 class="exp-title">Software Engineering Student</h3>
+                                <p class="exp-company">
+                                    IJSE - Institute of Java Software Engineering
+                                </p>
+                            </div>
+                            <span class="exp-year">2025 - Present</span>
+                        </div>
+                        <p class="exp-desc">
+                            Intensive training in Java development, database management, web
+                            technologies, and software architecture.
+                        </p>
+                        <div class="exp-tags">
+                            <span class="exp-tag">Java</span><span class="exp-tag">SQL</span><span
+                                class="exp-tag">MVC</span><span class="exp-tag">OOP</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exp-item reveal">
+                    <div class="exp-dot"></div>
+                    <div class="exp-card">
+                        <div class="exp-header">
+                            <div>
+                                <h3 class="exp-title">Personal Projects Developer</h3>
+                                <p class="exp-company">GitHub</p>
+                            </div>
+                            <span class="exp-year">2024 - Present</span>
+                        </div>
+                        <p class="exp-desc">
+                            Developing various personal projects including games, management
+                            systems, and web applications.
+                        </p>
+                        <div class="exp-tags">
+                            <span class="exp-tag">Java</span><span class="exp-tag">Python</span><span
+                                class="exp-tag">Git</span><span class="exp-tag">Problem Solving</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="section-wrap">
+            <div class="section-label">// Academic Background</div>
+            <h2 class="section-title">
+                Education & <span class="grad-text">Qualifications</span>
+            </h2>
+
+            <div class="timeline">
+                <div class="tl-item reveal">
+                    <div class="tl-dot"></div>
+                    <div class="tl-line"></div>
+                    <div class="tl-card">
+                        <div class="tl-header">
+                            <img src="assest/IJSE Logo.png" alt="IJSE" class="tl-logo"
+                                onerror="this.style.display = 'none'" />
+                            <div class="tl-meta">
+                                <span class="tl-year">2025 — Present</span><span
+                                    class="tl-badge active-badge">Current</span>
+                            </div>
+                        </div>
+                        <h3 class="tl-org">
+                            Institute of Java Software Engineering (IJSE)
+                        </h3>
+                        <p class="tl-desc">
+                            Currently pursuing the Higher National Diploma in Software
+                            Engineering, building deep expertise in Java, databases, web
+                            technologies, and software architecture.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tl-item reveal">
+                    <div class="tl-dot"></div>
+                    <div class="tl-line"></div>
+                    <div class="tl-card">
+                        <div class="tl-header">
+                            <img src="assest/SLEGA Logo.png" alt="SLEGA" class="tl-logo"
+                                onerror="this.style.display = 'none'" />
+                            <div class="tl-meta"><span class="tl-year">2025</span></div>
+                        </div>
+                        <h3 class="tl-org">
+                            Sri Lanka English Graduate's Association (SLEGA)
+                        </h3>
+                        <p class="tl-desc">
+                            Completed the English Graduate certification program and Diploma
+                            in English, strengthening professional communication skills.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tl-item reveal">
+                    <div class="tl-dot"></div>
+                    <div class="tl-line"></div>
+                    <div class="tl-card">
+                        <div class="tl-header">
+                            <img src="assest/School Logo.png" alt="School" class="tl-logo"
+                                onerror="this.style.display = 'none'" />
+                            <div class="tl-meta">
+                                <span class="tl-year">2017 — 2024</span>
+                            </div>
+                        </div>
+                        <h3 class="tl-org">
+                            G/ Ethkandura Seewali M.V. National College
+                        </h3>
+                        <p class="tl-desc">
+                            Successfully completed the G.C.E. Ordinary Level (O/L)
+                            Examination with strong performance in ICT and related subjects.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tl-item reveal">
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <div class="tl-header">
+                            <img src="assest/School Logo.png" alt="School" class="tl-logo"
+                                onerror="this.style.display = 'none'" />
+                            <div class="tl-meta">
+                                <span class="tl-year">2013 — 2017</span>
+                            </div>
+                        </div>
+                        <h3 class="tl-org">
+                            G/ Ethkandura Seewali M.V. National College
+                        </h3>
+                        <p class="tl-desc">
+                            Participated in the Scholarship Examination with determination,
+                            gaining valuable academic experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-wrap">
+            <div class="section-label">// Portfolio</div>
+            <h2 class="section-title">
+                Work <span class="grad-text">Projects</span>
+            </h2>
+            <p class="section-sub">
+                I have worked on a lot of projects. Here are some of them
+            </p>
+
+            <div class="projects-grid">
+                <div class="proj-card reveal">
+                    <div class="proj-thumb">
+                        <img src="assest/terminal.png" alt="Stock System" onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'flex';
+                " />
+                        <div class="proj-thumb-fallback">🗃️</div>
+                        <div class="proj-thumb-overlay"></div>
+                    </div>
+                    <div class="proj-body">
+                        <span class="proj-type">Terminal Application</span>
+                        <h3 class="proj-name">Stock System</h3>
+                        <p class="proj-desc">
+                            A terminal-based inventory management system built with Java,
+                            handling stock tracking, updates, and reporting.
+                        </p>
+                        <a href="https://github.com/chathunga2007/PRF-Project" target="_blank" class="proj-link"><i
+                                class="fa-brands fa-github"></i> View on GitHub
+                            <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="proj-card reveal">
+                    <div class="proj-thumb">
+                        <img src="assest/connect 4.png" alt="Connect 4" onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'flex';
+                " />
+                        <div class="proj-thumb-fallback">🎮</div>
+                        <div class="proj-thumb-overlay"></div>
+                    </div>
+                    <div class="proj-body">
+                        <span class="proj-type">Entertainment Application</span>
+                        <h3 class="proj-name">Connect 4 Game</h3>
+                        <p class="proj-desc">
+                            A fully functional Connect Four game built with Java OOP
+                            principles, featuring two-player mode.
+                        </p>
+                        <a href="https://github.com/chathunga2007/Connect_Four_Game-Assignment-OOP-" target="_blank"
+                            class="proj-link"><i class="fa-brands fa-github"></i> View on GitHub
+                            <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="proj-card reveal">
+                    <div class="proj-thumb">
+                        <img src="assest/flex gym.png" alt="Flex Gym" onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'flex';
+                " />
+                        <div class="proj-thumb-fallback">💪</div>
+                        <div class="proj-thumb-overlay"></div>
+                    </div>
+                    <div class="proj-body">
+                        <span class="proj-type">Standalone Application</span>
+                        <h3 class="proj-name">Flex Gym System</h3>
+                        <p class="proj-desc">
+                            A gym membership management system built using MVC architecture
+                            with member registration and payment tracking.
+                        </p>
+                        <a href="https://github.com/chathunga2007/Gym_Membership_Management_System-1st-Semester-Final-Project-Using-MVC-Architecture-"
+                            target="_blank" class="proj-link"><i class="fa-brands fa-github"></i> View on GitHub
+                            <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assignments Section -->
+    <section id="assignments">
+        <div class="section-wrap">
+            <div class="section-label">// Web Technologies Module</div>
+            <h2 class="section-title">
+                Work <span class="grad-text2">Assignments</span>
+            </h2>
+            <p class="section-sub">
+                The 12 assignments given to us in the Web technologies module
+            </p>
+            <div class="assign-grid">
+                <div class="assign-card reveal">
+                    <div class="assign-num">01</div>
+                    <div class="assign-name">Portfolio Website</div>
+                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="assign-card reveal">
+                    <div class="assign-num">02</div>
+                    <div class="assign-name">POS System</div>
+                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="assign-card reveal">
+                    <div class="assign-num">03</div>
+                    <div class="assign-name">Assignment 03</div>
+                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="assign-card reveal">
+                    <div class="assign-num">04</div>
+                    <div class="assign-name">Assignment 04</div>
+                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="assign-card reveal">
+                    <div class="assign-num">05</div>
+                    <div class="assign-name">Assignment 05</div>
+                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="assign-card reveal">
+                    <div class="assign-num">06</div>
+                    <div class="assign-name">Assignment 06</div>
+                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="assign-card reveal">
+                    <div class="assign-num">07</div>
+                    <div class="assign-name">Assignment 07</div>
+                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="assign-card reveal">
+                    <div class="assign-num">08</div>
+                    <div class="assign-name">Assignment 08</div>
+                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="assign-card reveal">
+                    <div class="assign-num">09</div>
+                    <div class="assign-name">Assignment 09</div>
+                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="assign-card reveal">
+                    <div class="assign-num">10</div>
+                    <div class="assign-name">Assignment 10</div>
+                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="assign-card reveal">
+                    <div class="assign-num">11</div>
+                    <div class="assign-name">Assignment 11</div>
+                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="assign-card reveal">
+                    <div class="assign-num">12</div>
+                    <div class="assign-name">Assignment 12</div>
+                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="section-wrap">
+            <div class="section-label">// Personal Gallery</div>
+            <h2 class="section-title">My <span class="grad-text">Gallery</span></h2>
+            <p class="section-sub">
+                Some of my pictures - Auto-scrolling gallery with manual controls
+            </p>
+        </div>
+
+        <div class="gallery-container">
+            <div class="gallery-track" id="galleryTrack">
+                <div class="gal-item">
+                    <img src="assest/Gallery/01.JPG" alt="Gallery 1" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/02.jpeg" alt="Gallery 2" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/03.JPG" alt="Gallery 3" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/04.JPG" alt="Gallery 4" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/05.JPG" alt="Gallery 5" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/06.png" alt="Gallery 6" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/07.JPG" alt="Gallery 7" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/08.JPG" alt="Gallery 8" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/09.jpg" alt="Gallery 9" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/10.jpg" alt="Gallery 10" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/11.jpg" alt="Gallery 11" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/12.jpg" alt="Gallery 12" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/13.jpg" alt="Gallery 13" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/14.jpg" alt="Gallery 14" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/15.jpg" alt="Gallery 15" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/16.jpg" alt="Gallery 16" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/17.jpg" alt="Gallery 17" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/18.jpg" alt="Gallery 18" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/19.JPG" alt="Gallery 19" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/20.jpg" alt="Gallery 12" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <!-- Duplicate -->
+                <div class="gal-item">
+                    <img src="assest/Gallery/1.JPG" alt="Gallery 1" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/2.JPG" alt="Gallery 2" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/3.JPG" alt="Gallery 3" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal-item">
+                    <img src="assest/Gallery/4.JPG" alt="Gallery 4" loading="lazy"
+                        onerror="this.parentElement.classList.add('empty')" />
+                    <div class="gal-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-controls">
+            <button class="gal-btn" id="galPrev">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="gal-btn" id="galPause">
+                <i class="fa-solid fa-pause"></i>
+            </button>
+            <button class="gal-btn" id="galNext">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lb-close" id="lbClose">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <button class="lb-prev" id="lbPrev">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <img src="" alt="" id="lbImg" />
+        <button class="lb-next" id="lbNext">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-wrap">
+            <div class="section-label">// Get In Touch</div>
+            <h2 class="section-title">Contact <span class="grad-text">Me</span></h2>
+            <p class="section-sub">
+                Feel free to connect with me! Reach out for inquiries, collaboration,
+                or support
+            </p>
+
+            <div class="contact-grid">
+                <div class="contact-left reveal">
+                    <h3 class="contact-cta">
+                        Let's build something
+                        <span class="grad-text">great</span> together.
+                    </h3>
+                    <p class="contact-desc">
+                        Whether it's a project collaboration, an internship opportunity,
+                        or just a friendly hello — my inbox is always open.
+                    </p>
+
+                    <div class="contact-items">
+                        <a href="tel:+94767945968" class="citem">
+                            <div class="citem-icon"><i class="fa-solid fa-phone"></i></div>
+                            <span>+94 76 794 5968</span>
+                        </a>
+                        <a href="mailto:wggachathungabimsara2007@gmail.com" class="citem">
+                            <div class="citem-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <span>wggachathungabimsara2007@gmail.com</span>
+                        </a>
+                        <a href="https://wa.me/+94767945968" target="_blank" class="citem">
+                            <div class="citem-icon">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <span>WhatsApp: +94 76 794 5968</span>
+                        </a>
+                        <div class="citem">
+                            <div class="citem-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <span>Ampegama, Galle, Sri Lanka</span>
+                        </div>
+                    </div>
+
+                    <div class="social-row">
+                        <a href="https://www.linkedin.com/in/chathunga-bimsara-02a728387/" target="_blank"
+                            class="soc-btn linkedin" data-name="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/chathunga2007" target="_blank" class="soc-btn github"
+                            data-name="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://web.facebook.com/profile.php?id=61571681231357" target="_blank"
+                            class="soc-btn facebook" data-name="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/@chathungabimsara2007" target="_blank" class="soc-btn youtube"
+                            data-name="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/chathunga200711/" target="_blank" class="soc-btn instagram"
+                            data-name="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://x.com/ChathungaB2007" target="_blank" class="soc-btn twitter"
+                            data-name="X/Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+
+                    <div class="map-wrap">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3790.7698147194856!2d80.14146567477698!3d6.215627093772299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae17900275491cd%3A0x19a109261f5b31ff!2sDunandasiri&#39;s%20House!5e1!3m2!1sen!2skr!4v1772132923828!5m2!1sen!2skr"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrap reveal">
+                    <div class="form-card">
+                        <!-- Updated Form for Formsubmit -->
+                        <form id="contactForm" action="https://formsubmit.co/wggachathungabimsara2007@gmail.com"
+                            method="POST">
+                            <!-- Hidden inputs for better email formatting -->
+                            <input type="hidden" name="_subject" value="New Contact Form Submission from Portfolio" />
+                            <input type="hidden" name="_template" value="table" />
+                            <input type="text" name="_honey" style="display: none" />
+
+                            <div class="form-group">
+                                <label for="fname">Your Name</label><input type="text" id="fname" name="name"
+                                    placeholder="Chathunga Bimsara" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="femail">Email Address</label><input type="email" id="femail" name="email"
+                                    placeholder="you@example.com" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="fsubject">Subject</label><input type="text" id="fsubject" name="subject"
+                                    placeholder="Project Collaboration" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="fmessage">Message</label><textarea id="fmessage" name="message"
+                                    placeholder="Tell me about your idea..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit" id="submitBtn">
+                                <i class="fa-solid fa-paper-plane"></i><span>Send Message</span>
+                            </button>
+                        </form>
+                        <p class="form-note" id="formNote"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">
+                Chathunga<span class="grad-text">.</span>dev
+            </div>
+            <p class="footer-copy">
+                © 2025 Chathunga Bimsara — All rights reserved.
+            </p>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/chathunga-bimsara-02a728387/" target="_blank"><i
+                        class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/chathunga2007" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://x.com/ChathungaB2007" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-top" id="backTop">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Chatbot -->
+    <button class="chatbot-toggle" id="chatbotToggle">
+        <i class="fa-solid fa-robot"></i>
+    </button>
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <div class="chatbot-avatar">🤖</div>
+            <div class="chatbot-info">
+                <h4>Chathunga's AI Assistant</h4>
+                <span>Powered by Gemini</span>
+            </div>
+            <button class="chatbot-close" id="chatbotClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="chatbot-messages" id="chatMessages">
+            <div class="chat-msg bot">
+                Hello! I'm Chathunga's AI assistant powered by Gemini. Ask me anything
+                about his skills, projects, education, or contact info!
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatInput" placeholder="Type your message..." />
+            <button id="chatSend"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+        <div class="chatbot-branding">Powered by Gemini AI</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
