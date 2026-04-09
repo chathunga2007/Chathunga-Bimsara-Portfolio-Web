@@ -221,11 +221,13 @@ body {
 }
 
 /* Hamburger & Toggles - Light mode එකේදීත් හොඳට පේන්න */
-[data-theme="light"] .hamburger span,
+[data-theme="light"] .hamburger span {
+  background: var(--text-primary);
+}
 [data-theme="light"] .theme-toggle,
 [data-theme="light"] .music-toggle {
-  background: rgba(15, 23, 42, 0.9);
-  color: #ffffff;
+  background: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 .nav-logo {
