@@ -2678,16 +2678,32 @@ section {
   top: -38px;
 }
 
+/* Contact Map - Fully Zoomable & Responsive */
 .map-wrap {
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid var(--card-border);
+  position: relative;
 }
 
 .map-wrap iframe {
   width: 100%;
-  height: 180px;
+  height: 320px;           /* ← මේක වැඩි කළා (zoom කරන්න පහසු වෙන්න) */
   border: none;
+  display: block;
+}
+
+/* Mobile වලත් හොඳට පේන්න */
+@media (max-width: 768px) {
+  .map-wrap iframe {
+    height: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-wrap iframe {
+    height: 240px;
+  }
 }
 
 .contact-form-wrap {
