@@ -410,9 +410,6 @@ body {
 }
 
 @media (max-width: 480px) {
-  .logo-name {
-    display: none;
-  }
 
   .header {
     padding: 10px 15px;
@@ -477,8 +474,8 @@ body {
   }
 
   .hero-photo-wrap {
-    width: 230px;
-    height: 230px;
+    width: 225px;
+    height: 225px;
   }
 
   .hero-stats {
@@ -1111,8 +1108,8 @@ section {
 
 .hero-photo-wrap {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 400px;
+  height: 400px;
   animation: fadeInRight 1s ease 0.5s forwards;
   opacity: 0;
 }
@@ -1156,7 +1153,7 @@ section {
   border: 3px solid transparent;
   background:
     linear-gradient(var(--bg-primary), var(--bg-primary)) padding-box,
-    linear-gradient(135deg, var(--accent-secondary), transparent) border-box;
+    linear-gradient(135deg, var(--accent-primary), transparent) border-box;
   animation: ring-rotate 8s linear infinite reverse;
 }
 
@@ -1224,10 +1221,11 @@ section {
 
 .hero-photo {
   position: absolute;
-  inset: 15px;
+  inset: 5px;
   border-radius: 50%;
   overflow: hidden;
-  background: var(--accent-gradient);
+  background: #020024;
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
   padding: 3px;
   box-shadow: 0 0 50px rgba(6, 182, 212, 0.3);
   transition: all 0.4s ease;
