@@ -156,7 +156,7 @@ body {
   }
 }
 
-/* Header - UPDATED FOR BLUR EFFECT */
+/* ==================== HEADER - IMPROVED BLUR (Dark + Light) ==================== */
 .header {
   position: fixed;
   top: 0;
@@ -167,25 +167,65 @@ body {
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
-  background: rgba(3, 7, 18, 0.45);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(30px); /* තවත් blur වැඩි කළා */
+  -webkit-backdrop-filter: blur(30px);
+  background: rgba(3, 7, 18, 0.65); /* Dark mode - වඩා පැහැදිලි */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   transition: all 0.3s ease;
 }
 
 .header.scrolled {
-  background: rgba(3, 7, 18, 0.75);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  background: rgba(3, 7, 18, 0.92);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 
+/* ==================== LIGHT MODE ==================== */
 [data-theme="light"] .header {
-  background: rgba(248, 250, 252, 0.45);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(248, 250, 252, 0.85); /* Light mode එකේ වඩා solid */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 [data-theme="light"] .header.scrolled {
-  background: rgba(248, 250, 252, 0.85);
+  background: rgba(248, 250, 252, 0.98); /* Scrolled වෙනකොට තවත් solid */
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+}
+/* ==================== MOBILE MENU (Navbar Links) ==================== */
+@media (max-width: 900px) {
+  .navbar-links {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: rgba(3, 7, 18, 0.95); /* Dark mode mobile menu */
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    flex-direction: column;
+    padding: 20px;
+    gap: 5px;
+    transform: translateY(-150%);
+    opacity: 0;
+    transition: all 0.4s ease;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .navbar-links.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* Light Mode Mobile Menu */
+  [data-theme="light"] .navbar-links {
+    background: rgba(248, 250, 252, 0.97);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Hamburger & Toggles - Light mode එකේදීත් හොඳට පේන්න */
+[data-theme="light"] .hamburger span,
+[data-theme="light"] .theme-toggle,
+[data-theme="light"] .music-toggle {
+  background: rgba(15, 23, 42, 0.9);
+  color: #ffffff;
 }
 
 .nav-logo {
@@ -410,7 +450,6 @@ body {
 }
 
 @media (max-width: 480px) {
-
   .header {
     padding: 10px 15px;
   }
@@ -1225,7 +1264,12 @@ section {
   border-radius: 50%;
   overflow: hidden;
   background: #020024;
-  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
   padding: 3px;
   box-shadow: 0 0 50px rgba(6, 182, 212, 0.3);
   transition: all 0.4s ease;
@@ -2686,7 +2730,7 @@ section {
 
 .map-wrap iframe {
   width: 100%;
-  height: 320px;           /* ← මේක වැඩි කළා (zoom කරන්න පහසු වෙන්න) */
+  height: 320px; /* ← මේක වැඩි කළා (zoom කරන්න පහසු වෙන්න) */
   border: none;
   display: block;
 }
@@ -3147,99 +3191,5 @@ footer {
     right: 15px;
     width: 40px;
     height: 40px;
-  }
-}
-
-/* ==================== ENGAGEMENT COUNTERS ==================== */
-.heart-toggle {
-  position: fixed;
-  bottom: 160px;
-  right: 25px;
-  width: 58px;
-  height: 58px;
-  background: #ef4444;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  font-size: 1.8rem;
-  cursor: pointer;
-  z-index: 999;
-  box-shadow: 0 0 25px rgba(239, 68, 68, 0.6);
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.heart-toggle:hover {
-  transform: scale(1.15);
-  box-shadow: 0 0 35px rgba(239, 68, 68, 0.9);
-}
-
-.heart-toggle .heart-count {
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  background: #fff;
-  color: #ef4444;
-  font-size: 0.75rem;
-  font-weight: 700;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.3);
-}
-
-/* Footer Stats */
-.footer-stats {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-}
-
-.stat-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  white-space: nowrap;
-}
-
-.stat-item i {
-  color: var(--accent-primary);
-}
-
-/* Flying Hearts Animation */
-.flying-heart {
-  position: fixed;
-  z-index: 99999;
-  pointer-events: none;
-  user-select: none;
-  animation: flyHeart 3s ease forwards;
-}
-
-@keyframes flyHeart {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-800px) scale(0.4) rotate(45deg);
-    opacity: 0;
-  }
-}
-
-/* Mobile adjustments */
-@media (max-width: 480px) {
-  .heart-toggle {
-    bottom: 140px;
-    right: 18px;
-    width: 52px;
-    height: 52px;
-    font-size: 1.6rem;
   }
 }
