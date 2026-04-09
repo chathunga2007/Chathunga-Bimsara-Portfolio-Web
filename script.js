@@ -88,7 +88,9 @@ document.addEventListener("DOMContentLoaded", function () {
     "Software Engineer.",
     "Java Developer.",
     "Web Developer.",
-    "Full Stack Developer.",
+    "Frontend Developer.",
+    "Backend Developer.",
+    "Full-Stack Developer.",
     "UI/UX Engineer.",
     "Content Creator.",
   ];
@@ -370,7 +372,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => (formNote.textContent = ""), 5000);
   });
 
-  // ===== CHATBOT WITH GEMINI AI =====
+  // ===== CHATBOT - NO API KEY (Pure Smart Fallback) =====
   const chatbotToggle = document.getElementById("chatbotToggle");
   const chatbotWindow = document.getElementById("chatbotWindow");
   const chatbotClose = document.getElementById("chatbotClose");
@@ -378,75 +380,68 @@ document.addEventListener("DOMContentLoaded", function () {
   const chatSend = document.getElementById("chatSend");
   const chatMessages = document.getElementById("chatMessages");
 
-  chatbotToggle.addEventListener("click", () =>
-    chatbotWindow.classList.toggle("active"),
-  );
-  chatbotClose.addEventListener("click", () =>
-    chatbotWindow.classList.remove("active"),
-  );
+  chatbotToggle.addEventListener("click", () => chatbotWindow.classList.toggle("active"));
+  chatbotClose.addEventListener("click", () => chatbotWindow.classList.remove("active"));
 
-  // ⚠️ PUT YOUR GEMINI API KEY HERE - Get it from: https://aistudio.google.com/app/apikey
-  const GEMINI_API_KEY = "AIzaSyCH0LXj5NeRI22fiydYJ8cbMoW271Ef2b0";
-
-  // Context about Chathunga for the AI
+  // Chathunga Context (නොවෙනස්ව තියන්න - ඔයාගේ සියලුම info මෙතන තියෙනවා)
   const CHATHUNGA_CONTEXT = `
-You are Chathunga Bimsara's AI assistant. Here's information about him:
-
-**Personal Info:**
-- Name: Chathunga Bimsara
-- Location: Ampegama, Galle, Sri Lanka
-- Phone: +94 76 794 5968
-- Email: wggachathungabimsara2007@gmail.com
-- Birthday: November 02, 2007
-
-**Education:**
-- Currently studying Software Engineering at IJSE (Institute of Java Software Engineering) - Higher National Diploma
-- Completed English Graduate certification from SLEGA (2025)
-- G.C.E. O/L from G/ Ethkandura Seewali M.V. National College (2017-2024)
-
-**Skills:**
-- Programming Languages: Java (95%), JavaScript (85%), Python (75%), SQL (80%), HTML5 (90%), CSS3 (90%)
-- Tools: Git, GitHub, Docker, VS Code, IntelliJ IDEA
-- Databases: MySQL (95%), PostgreSQL (70%)
-- Design: Figma (85%), Adobe Photoshop (70%), Adobe Premiere Pro (80%)
-
-**Projects:**
-1. Stock System - Terminal-based inventory management in Java
-2. Connect 4 Game - Two-player game with OOP principles
-3. Flex Gym System - Gym membership management with MVC architecture
-
-**Services:** Web Development, Java Applications, Database Design, Responsive Design, UI/UX Design, Open Source
-
-**Social Links:**
-- LinkedIn: linkedin.com/in/chathunga-bimsara-02a728387/
-- GitHub: github.com/chathunga2007
-- YouTube: @chathungabimsara2007
-- Instagram: @chathunga200711
-- X/Twitter: @ChathungaB2007
-
-Be helpful, friendly, and provide accurate information. Answer questions about skills, projects, education, or how to contact him. Keep responses concise but informative.
+Name: Chathunga Bimsara
+Location: Ampegama, Galle, Sri Lanka
+Phone: +94 76 794 5968
+Email: wggachathungabimsara2007@gmail.com
+Birthday: November 02, 2007
+Education: Higher National Diploma in Software Engineering at IJSE | English Graduate from SLEGA (2025) | O/L from G/Ethkandura Seewali M.V.
+Skills: Java 95%, JavaScript 85%, Python 75%, SQL 80%, HTML5 90%, CSS3 90%, Git, GitHub, Docker, VS Code, IntelliJ, MySQL 95%, PostgreSQL 70%, Figma 85%, Photoshop 70%, Premiere Pro 80%
+Projects: Stock System (Java terminal inventory), Connect 4 Game (OOP two-player), Flex Gym System (MVC gym management)
+Services: Web Development, Java Applications, Database Design, Responsive Design, UI/UX Design, Open Source
+Social: LinkedIn linkedin.com/in/chathunga-bimsara-02a728387, GitHub github.com/chathunga2007, YouTube @chathungabimsara2007, Instagram @chathunga200711, X @ChathungaB2007
 `;
 
-  function addMessage(text, isUser, isError = false) {
+  function addMessage(text, isUser) {
     const msg = document.createElement("div");
-    msg.className = `chat-msg ${isUser ? "user" : isError ? "error" : "bot"}`;
+    msg.className = `chat-msg ${isUser ? "user" : "bot"}`;
     msg.textContent = text;
     chatMessages.appendChild(msg);
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
 
-  function addTypingIndicator() {
-    const typing = document.createElement("div");
-    typing.className = "typing-indicator";
-    typing.id = "typingIndicator";
-    typing.innerHTML = "<span></span><span></span><span></span>";
-    chatMessages.appendChild(typing);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  }
+  function getSmartResponse(message) {
+    const msg = message.toLowerCase();
 
-  function removeTypingIndicator() {
-    const typing = document.getElementById("typingIndicator");
-    if (typing) typing.remove();
+    // Greetings
+    if (msg.includes("hi") || msg.includes("hello") || msg.includes("hey"))
+      return "Hello! 👋 I'm Chathunga's AI assistant. Ask me anything about him!";
+
+    // Name
+    if (msg.includes("name") || msg.includes("who are you"))
+      return "I'm Chathunga Bimsara's personal AI assistant! Nice to meet you 😊";
+
+    // Skills
+    if (msg.includes("skill") || msg.includes("what can you") || msg.includes("programming"))
+      return "Chathunga is highly skilled in:\n• Java (95%)\n• JavaScript (85%)\n• Python (75%)\n• SQL (80%)\n• HTML5 & CSS3 (90%)\n• Git, Docker, Figma & more!";
+
+    // Projects
+    if (msg.includes("project") || msg.includes("work") || msg.includes("built"))
+      return "Chathunga's main projects:\n1. Stock System - Java terminal inventory management\n2. Connect 4 Game - Two-player OOP game\n3. Flex Gym System - Full MVC gym membership app";
+
+    // Education
+    if (msg.includes("education") || msg.includes("study") || msg.includes("ijse") || msg.includes("school"))
+      return "Currently studying Higher National Diploma in Software Engineering at IJSE.\nCompleted English Graduate from SLEGA (2025) and O/L from G/Ethkandura Seewali M.V.";
+
+    // Contact
+    if (msg.includes("contact") || msg.includes("phone") || msg.includes("email") || msg.includes("number"))
+      return "📧 Email: wggachathungabimsara2007@gmail.com\n📱 Phone: +94 76 794 5968\n📍 Ampegama, Galle, Sri Lanka";
+
+    // Location
+    if (msg.includes("where") || msg.includes("live") || msg.includes("galle"))
+      return "Chathunga lives in Ampegama, Galle, Sri Lanka 🇱🇰";
+
+    // Availability / Work
+    if (msg.includes("work") || msg.includes("job") || msg.includes("freelance") || msg.includes("open"))
+      return "Yes! Chathunga is available for freelance web development, Java projects, and collaborations. Feel free to contact him!";
+
+    // Default friendly fallback
+    return "Hmm, I'm not sure about that one 😅 But you can ask me about Chathunga's skills, projects, education, or contact info!\n\nYou can also email him directly: wggachathungabimsara2007@gmail.com";
   }
 
   async function sendMessage() {
@@ -455,88 +450,26 @@ Be helpful, friendly, and provide accurate information. Answer questions about s
 
     addMessage(message, true);
     chatInput.value = "";
-    addTypingIndicator();
 
-    try {
-      // Check if API key is configured
-      if (
-        GEMINI_API_KEY === "AIzaSyCH0LXj5NeRI22fiydYJ8cbMoW271Ef2b0" ||
-        !GEMINI_API_KEY
-      ) {
-        removeTypingIndicator();
-        // Fallback to basic responses if no API key
-        const lowerMsg = message.toLowerCase();
-        let response =
-          "Thanks for your message! I'm Chathunga's AI assistant. Ask me about his skills, projects, education, or contact info!";
+    // Typing effect simulation
+    const typing = document.createElement("div");
+    typing.className = "typing-indicator";
+    typing.innerHTML = "<span></span><span></span><span></span>";
+    chatMessages.appendChild(typing);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
 
-        if (lowerMsg.includes("skill"))
-          response =
-            "Chathunga is skilled in Java (95%), JavaScript (85%), Python (75%), SQL (80%), HTML5 (90%), CSS3 (90%), and various tools like Git, GitHub, Docker, VS Code, and IntelliJ IDEA.";
-        else if (lowerMsg.includes("project"))
-          response =
-            "Chathunga has built: 1) Stock System - Terminal inventory management, 2) Connect 4 Game - Two-player game, 3) Flex Gym System - Gym membership management with MVC.";
-        else if (lowerMsg.includes("contact"))
-          response =
-            "You can contact Chathunga at:\n📧 wggachathungabimsara2007@gmail.com\n📱 +94 76 794 5968\n📍 Ampegama, Galle, Sri Lanka";
-        else if (lowerMsg.includes("education"))
-          response =
-            "Chathunga is currently pursuing a Higher National Diploma in Software Engineering at IJSE. He completed his O/L from G/ Ethkandura Seewali M.V. National College.";
-        else if (lowerMsg.includes("hello") || lowerMsg.includes("hi"))
-          response =
-            "Hello! 👋 Nice to meet you! I'm Chathunga's AI assistant. How can I help you today?";
-        else if (lowerMsg.includes("name"))
-          response =
-            "I'm Chathunga Bimsara's AI assistant! Chathunga is a Software Engineering undergraduate at IJSE, Sri Lanka.";
-
-        addMessage(response);
-        return;
-      }
-
-      const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            contents: [
-              {
-                parts: [
-                  { text: `${CHATHUNGA_CONTEXT}\n\nUser Question: ${message}` },
-                ],
-              },
-            ],
-            generationConfig: {
-              temperature: 0.7,
-              maxOutputTokens: 500,
-            },
-          }),
-        },
-      );
-
-      removeTypingIndicator();
-
-      if (!response.ok) throw new Error("API Error");
-
-      const data = await response.json();
-      const aiResponse =
-        data.candidates?.[0]?.content?.parts?.[0]?.text ||
-        "I couldn't process that. Please try again!";
-      addMessage(aiResponse);
-    } catch (error) {
-      removeTypingIndicator();
-      addMessage(
-        "Sorry, I'm having trouble connecting. Please try again or contact Chathunga directly at wggachathungabimsara2007@gmail.com",
-        false,
-        true,
-      );
-    }
+    // Small delay to feel natural
+    setTimeout(() => {
+      typing.remove();
+      const reply = getSmartResponse(message);
+      addMessage(reply, false);
+    }, 800);
   }
 
   chatSend.addEventListener("click", sendMessage);
   chatInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") sendMessage();
   });
-
   // ===== SMOOTH SCROLL =====
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
