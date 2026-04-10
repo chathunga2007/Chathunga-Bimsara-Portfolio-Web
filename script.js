@@ -1,4 +1,52 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+  // ====================== MYSQL API LIKE/DISLIKE SYSTEM ======================
+const API_URL = "https://ඔයාගේ-subdomain.epizy.com/api.php";   // ← ඔයාගේ api.php URL එක මෙතන දාන්න
+
+async function loadFeedbackStats() {
+    try {
+        const res = await fetch(API_URL);
+        const data = await res.json();
+        document.getElementById("likeCount").textContent = data.likes || 0;
+        document.getElementById("dislikeCount").textContent = data.dislikes || 0;
+    } catch(e) {
+        console.log("API error");
+    }
+}
+
+async function handleLike() {
+    if (localStorage.getItem("hasVoted") === "true") return alert("ඔයා දැනටමත් vote කරලා තියෙනවා! ❤️");
+
+    try {
+        const res = await fetch(API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ action: "like" })
+        });
+        const data = await res.json();
+        document.getElementById("likeCount").textContent = data.likes || 0;
+        localStorage.setItem("hasVoted", "true");
+    } catch(e) {}
+}
+
+async function handleDislike() {
+    if (localStorage.getItem("hasVoted") === "true") return alert("ඔයා දැනටමත් vote කරලා තියෙනවා! 👎");
+
+    try {
+        const res = await fetch(API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ action: "dislike" })
+        });
+        const data = await res.json();
+        document.getElementById("dislikeCount").textContent = data.dislikes || 0;
+        localStorage.setItem("hasVoted", "true");
+    } catch(e) {}
+}
+
+// Load initial counts when page loads
+loadFeedbackStats();
+
   // ===== PARTICLES =====
   const bgEffects = document.getElementById("bgEffects");
   for (let i = 0; i < 35; i++) {
