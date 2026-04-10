@@ -561,7 +561,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return "Hello! 👋 I'm Chathunga's AI assistant. Ask me anything about him!";
 
     if (msg.includes("name") || msg.includes("who are you") || msg.includes("who is chathunga"))
-      return "I'm Chathunga Bimsara's personal AI assistant! Nice to meet you 😊\n\nChathunga is a 17-year-old Software Engineering student from Galle, Sri Lanka.";
+      return "I'm Chathunga Bimsara's personal AI assistant! Nice to meet you 😊\n\nChathunga is a 18-year-old Software Engineering student from Galle, Sri Lanka.";
 
     if (msg.includes("skill") || msg.includes("what can") || msg.includes("programming") || msg.includes("tech"))
       return "Chathunga is highly skilled in:\n☕ Java — 95%\n⚡ JavaScript — 85%\n🐍 Python — 75%\n🗄️ SQL — 80%\n🌐 HTML5 — 90%\n🎨 CSS3 — 90%\n\nPlus Git, Docker, Figma, Premiere Pro & more!";
@@ -585,7 +585,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return "Services offered:\n\n💻 Web Development\n☕ Java Applications\n🗄️ Database Design\n📱 Responsive Design\n🎨 UI/UX Design\n🔓 Open Source Contributions";
 
     if (msg.includes("birthday") || msg.includes("born") || msg.includes("age"))
-      return "🎂 Birthday: November 02, 2007\n📊 Age: 17 years old";
+      return "🎂 Birthday: November 02, 2007\n📊 Age: 18 years old";
 
     if (msg.includes("github") || msg.includes("code") || msg.includes("repository"))
       return "🐙 GitHub: github.com/chathunga2007\n\nHe has multiple repositories including Java projects, games, and web apps!";
