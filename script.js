@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   // ====================== MYSQL API LIKE/DISLIKE SYSTEM ======================
-const API_URL = "https://ඔයාගේ-subdomain.epizy.com/api.php";   // ← ඔයාගේ api.php URL එක මෙතන දාන්න
+const API_URL = "https://chathunga2007.github.io/My-Official-Personal-Portfolio-Web/api.php";   // ← ඔයාගේ api.php URL එක මෙතන දාන්න
 
 async function loadFeedbackStats() {
     try {
