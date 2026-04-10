@@ -1,10 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* ===== PRELOADER ===== */
-  const preloader = document.getElementById("preloader");
-  window.addEventListener("load", () => { setTimeout(() => preloader.classList.add("done"), 2200); });
-  setTimeout(() => preloader.classList.add("done"), 4500);
-
   /* ===== CUSTOM CURSOR + TRAIL ===== */
   const cursorDot = document.getElementById("cursorDot");
   const cursorRing = document.getElementById("cursorRing");
