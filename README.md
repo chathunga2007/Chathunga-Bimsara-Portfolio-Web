@@ -1,4 +1,4 @@
-# Chathunga Bimsara | Personal Portfolio Website
+# 🌟 Chathunga Bimsara | Personal Portfolio Website
 
 Welcome to the repository of my official personal portfolio website! This project is a modern, responsive, and dynamic showcase of my skills, experiences, educational background, and portfolio of projects. Built with a focus on smooth animations, clean UI/UX, and an engaging user experience.
 
@@ -9,14 +9,13 @@ Welcome to the repository of my official personal portfolio website! This projec
 - **Wireframe:** [Diagrams.net](https://app.diagrams.net/#G1Ngnmv88UrGTSzOU7uYdSw8raLsIPDjim#%7B%22pageId%22%3A%221XPUu_R75vPcrxgwMtCx%22%7D)
 - **Portfolio Mockups:** [Figma Design](https://www.figma.com/design/lObfpoO3qAU8Heyuy43jZV/Personal-Portfolio-Mockups?node-id=173-1283&t=ALB8JsAKw1iH6GIL-1)
 
-![Home Section](./assest/Website/home.png)
-
 ## 🚀 Features & Sections
 
 The website is divided into several interactive sections, each designed to provide comprehensive information about my professional journey.
 
 ### 🏠 Home / Hero Section
 The landing page features a dynamic background, a glitch text effect for my name, and quick links to my socials and resume.
+![Home Section](./assest/Website/home.png)
 
 ### 👨‍💻 About Me
 Detailed background information, my journey as a Software Engineering student at IJSE, and my passion for clean code.
