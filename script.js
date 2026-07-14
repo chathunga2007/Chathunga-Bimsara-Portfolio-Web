@@ -5,6 +5,131 @@ document.addEventListener("DOMContentLoaded", function () {
   document.documentElement.setAttribute("data-accent", initAccent);
 
 
+  /* ===== SYNTHESIZED SOUND EFFECTS ENGINE ===== */
+  let audioCtxInstance = null;
+
+  function getAudioContext() {
+    if (!audioCtxInstance) {
+      audioCtxInstance = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (audioCtxInstance.state === "suspended") {
+      audioCtxInstance.resume();
+    }
+    return audioCtxInstance;
+  }
+
+  function playSynthSFX(type) {
+    const sfxToggle = document.getElementById("sfxToggle");
+    if (sfxToggle && !sfxToggle.checked) return;
+    
+    try {
+      const ctx = getAudioContext();
+      const now = ctx.currentTime;
+      
+      if (type === "hover") {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(1400, now);
+        
+        gain.gain.setValueAtTime(0.015, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.015);
+        
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.015);
+      } 
+      else if (type === "click") {
+        const osc1 = ctx.createOscillator();
+        const gain1 = ctx.createGain();
+        osc1.type = "sine";
+        osc1.frequency.setValueAtTime(600, now);
+        osc1.frequency.exponentialRampToValueAtTime(1300, now + 0.03);
+        
+        gain1.gain.setValueAtTime(0.03, now);
+        gain1.gain.exponentialRampToValueAtTime(0.0001, now + 0.03);
+        
+        osc1.connect(gain1);
+        gain1.connect(ctx.destination);
+        osc1.start(now);
+        osc1.stop(now + 0.03);
+        
+        setTimeout(() => {
+          try {
+            const ctx2 = getAudioContext();
+            const now2 = ctx2.currentTime;
+            const osc2 = ctx2.createOscillator();
+            const gain2 = ctx2.createGain();
+            osc2.type = "sine";
+            osc2.frequency.setValueAtTime(800, now2);
+            osc2.frequency.exponentialRampToValueAtTime(1600, now2 + 0.03);
+            
+            gain2.gain.setValueAtTime(0.03, now2);
+            gain2.gain.exponentialRampToValueAtTime(0.0001, now2 + 0.03);
+            
+            osc2.connect(gain2);
+            gain2.connect(ctx2.destination);
+            osc2.start(now2);
+            osc2.stop(now2 + 0.03);
+          } catch(e){}
+        }, 35);
+      } 
+      else if (type === "boot") {
+        const frequencies = [349.23, 440.00, 523.25, 659.25];
+        frequencies.forEach((freq, idx) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = "triangle";
+          osc.frequency.setValueAtTime(freq, now + idx * 0.06);
+          
+          gain.gain.setValueAtTime(0.02, now + idx * 0.06);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.06 + 0.35);
+          
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now + idx * 0.06);
+          osc.stop(now + idx * 0.06 + 0.35);
+        });
+      } 
+      else if (type === "whoosh") {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(200, now);
+        osc.frequency.exponentialRampToValueAtTime(1000, now + 0.15);
+        
+        gain.gain.setValueAtTime(0.02, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.15);
+        
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.15);
+      }
+      else if (type === "chime") {
+        const chord = [523.25, 659.25, 783.99, 1046.50];
+        chord.forEach((freq, idx) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(freq, now + idx * 0.08);
+          
+          gain.gain.setValueAtTime(0.03, now + idx * 0.08);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.08 + 0.6);
+          
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now + idx * 0.08);
+          osc.stop(now + idx * 0.08 + 0.6);
+        });
+      }
+    } catch (e) {
+      console.warn("SFX synthesis failed: ", e);
+    }
+  }
+
+
   /* ===== CUSTOM CURSOR + TRAIL ===== */
   const cursorDot = document.getElementById("cursorDot");
   const cursorRing = document.getElementById("cursorRing");
@@ -56,8 +181,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const hoverTargets = document.querySelectorAll("a, button, .hsoc, .soc-btn, .proj-card, .service-card, .skill-card, .detail-card, .assign-card, .gal-btn, .gallery-slide, .orbital-icon, .citem, .hstat");
   hoverTargets.forEach(el => {
-    el.addEventListener("mouseenter", () => { cursorDot.classList.add("hovering"); cursorRing.classList.add("hovering"); });
-    el.addEventListener("mouseleave", () => { cursorDot.classList.remove("hovering"); cursorRing.classList.remove("hovering"); });
+    el.addEventListener("mouseenter", () => { 
+      cursorDot.classList.add("hovering"); 
+      cursorRing.classList.add("hovering"); 
+      playSynthSFX("hover");
+    });
+    el.addEventListener("mouseleave", () => { 
+      cursorDot.classList.remove("hovering"); 
+      cursorRing.classList.remove("hovering"); 
+    });
+    el.addEventListener("click", () => {
+      playSynthSFX("click");
+    });
   });
 
   /* ===== SCROLL PROGRESS ===== */
@@ -482,6 +617,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  const savedSFX = localStorage.getItem("fx-sfx") !== "false";
+  const sfxToggle = document.getElementById("sfxToggle");
+  if (sfxToggle) {
+    sfxToggle.checked = savedSFX;
+    sfxToggle.addEventListener("change", () => {
+      localStorage.setItem("fx-sfx", sfxToggle.checked);
+    });
+  }
+
   /* ===== CARD MOUSE-GLOW COORDINATE TRACKER ===== */
   const allCards = document.querySelectorAll(".service-card, .proj-card, .skill-card, .detail-card, .hstat, .exp-card, .tl-card");
   allCards.forEach(card => {
@@ -491,6 +635,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const y = e.clientY - rect.top;
       card.style.setProperty("--mouse-x", `${x}px`);
       card.style.setProperty("--mouse-y", `${y}px`);
+      
+      const px = (x / rect.width) * 100;
+      const py = (y / rect.height) * 100;
+      card.style.setProperty("--mouse-x-percent", `${px}%`);
+      card.style.setProperty("--mouse-y-percent", `${py}%`);
     });
   });
 
@@ -875,6 +1024,7 @@ document.addEventListener("DOMContentLoaded", function () {
         body: formData
       });
       if (response.ok) {
+        playSynthSFX("chime");
         formNote.textContent = "✓ Message sent successfully! I will reply soon.";
         formNote.className = "form-note success";
         contactForm.reset();
@@ -1428,6 +1578,53 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   fetchGitHubStats();
 
+  /* ===== LIVE SRI LANKA LOCAL TIME & STATUS CARD ===== */
+  function updateSriLankaTime() {
+    const sriLankaTimeEl = document.getElementById("sriLankaTime");
+    const sriLankaStatusTextEl = document.getElementById("sriLankaStatusText");
+    const statusDotEl = document.querySelector(".status-dot-pulse");
+    if (!sriLankaTimeEl) return;
+
+    const now = new Date();
+    const utcMs = now.getTime() + now.getTimezoneOffset() * 60 * 1000;
+    const slOffsetMs = 5.5 * 60 * 60 * 1000;
+    const slDate = new Date(utcMs + slOffsetMs);
+
+    const hours = slDate.getHours();
+    const minutes = slDate.getMinutes();
+    const seconds = slDate.getSeconds();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    const displayHours = hours % 12 || 12;
+    const strMinutes = minutes < 10 ? '0' + minutes : minutes;
+    const strSeconds = seconds < 10 ? '0' + seconds : seconds;
+    
+    sriLankaTimeEl.textContent = `${displayHours}:${strMinutes}:${strSeconds} ${ampm}`;
+
+    let statusText = "";
+    let statusColor = "#10b981";
+    
+    if (hours >= 9 && hours < 17) {
+      statusText = "🎓 studying & learning at IJSE";
+      statusColor = "#10b981";
+    } else if ((hours >= 17 && hours < 23) || (hours >= 0 && hours < 2)) {
+      statusText = "💻 coding & styling side projects";
+      statusColor = "#a855f7";
+    } else {
+      statusText = "😴 dreaming in bytecode (offline)";
+      statusColor = "#64748b";
+    }
+
+    if (sriLankaStatusTextEl) {
+      sriLankaStatusTextEl.textContent = statusText;
+    }
+    if (statusDotEl) {
+      statusDotEl.style.backgroundColor = statusColor;
+      statusDotEl.style.boxShadow = `0 0 0 0 ${statusColor}70`;
+    }
+  }
+  setInterval(updateSriLankaTime, 1000);
+  updateSriLankaTime();
+
   /* ===== RETRO HACKER TERMINAL CONSOLE ===== */
   const terminalOverlay = document.getElementById("terminalOverlay");
   const terminalInput = document.getElementById("terminalInput");
@@ -1452,6 +1649,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function openTerminal() {
     if (terminalOverlay) {
+      playSynthSFX("boot");
       terminalOverlay.classList.add("active");
       if (terminalInput) {
         terminalInput.value = "";
@@ -1938,6 +2136,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function openPalette() {
     if (paletteOverlay) {
+      playSynthSFX("whoosh");
       paletteOverlay.classList.add("active");
       paletteInput.value = "";
       renderPaletteItems();
