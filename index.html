@@ -21,8 +21,7 @@
     <div class="cursor-ring" id="cursorRing"></div>
     <div class="scroll-progress" id="scrollProgress"></div>
     <div class="noise-overlay"></div>
-    <canvas class="matrix-canvas" id="matrixCanvas"></canvas>
-    <canvas class="network-canvas" id="networkCanvas"></canvas>
+    <canvas class="bg-canvas" id="bgCanvas"></canvas>
 
     <div class="bg-effects" id="bgEffects">
         <div class="floating-shape shape-1"></div>
@@ -59,6 +58,8 @@
         </nav>
         <div class="header-right">
             <div class="toggles-wrapper">
+                <button class="palette-toggle" id="paletteToggleBtn" aria-label="Command Palette" title="Command Palette (Ctrl+K)"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="terminal-toggle" id="terminalToggleBtn" aria-label="Open Terminal" title="Developer Terminal"><i class="fa-solid fa-terminal"></i></button>
                 <button class="music-toggle" id="musicToggle" aria-label="Toggle Music"><i
                         class="fa-solid fa-volume-xmark"></i></button>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme"><i
@@ -182,6 +183,15 @@
                                 794 5968</span></div>
                         <div class="detail-card full reveal"><span class="dc-label">Email</span><span
                                 class="dc-val">wggachathungabimsara2007@gmail.com</span></div>
+                        <div class="detail-card full reveal github-stats-card" id="githubStatsCard">
+                            <span class="dc-label"><i class="fa-brands fa-github"></i> Live GitHub Activity (chathunga2007)</span>
+                            <div class="gh-stats-wrapper">
+                                <div class="gh-stat-item"><span class="gh-stat-val" id="ghRepos">-</span><span class="gh-stat-lbl">Public Repos</span></div>
+                                <div class="gh-stat-item"><span class="gh-stat-val" id="ghFollowers">-</span><span class="gh-stat-lbl">Followers</span></div>
+                                <div class="gh-stat-item"><span class="gh-stat-val" id="ghStars">-</span><span class="gh-stat-lbl">Starred Repos</span></div>
+                                <div class="gh-stat-item"><span class="gh-stat-val" id="ghGists">-</span><span class="gh-stat-lbl">Gists</span></div>
+                            </div>
+                        </div>
                     </div>
                     <div class="about-action-row">
                         <a href="#projects" class="btn-primary"><i class="fa-solid fa-code"></i> View Projects</a>
@@ -252,7 +262,10 @@
         <div class="section-wrap">
             <div class="section-label reveal">// Technical Skills</div>
             <h2 class="section-title reveal">Key <span class="grad-text">Skills</span></h2>
-            <div class="skills-tabs reveal">
+            <div class="skills-layout-grid">
+                <!-- Left: Skill Bars -->
+                <div class="skills-bars-col">
+                    <div class="skills-tabs reveal">
                 <button class="skill-tab-btn active" data-tab="languages">Languages</button>
                 <button class="skill-tab-btn" data-tab="tools">Tools</button>
                 <button class="skill-tab-btn" data-tab="database">Databases</button>
@@ -408,6 +421,12 @@
                     </div>
                 </div>
             </div>
+                </div>
+                <!-- Right: 3D Skills Sphere -->
+                <div class="skills-sphere-col reveal-right">
+                    <canvas id="skillsSphereCanvas" class="skills-sphere-canvas"></canvas>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -554,7 +573,7 @@
             <div class="projects-grid">
 
                 <!-- Stock System -->
-                <a href="https://github.com/chathunga2007/PRF-Project" target="_blank" class="proj-card-link">
+                <a href="https://github.com/chathunga2007/PRF-Project" target="_blank" class="proj-card-link" data-proj="stock">
                     <div class="proj-card gradient-border reveal-scale">
                         <div class="proj-thumb">
                             <img src="assest/terminal.png" alt="Stock System" />
@@ -576,8 +595,7 @@
                 </a>
 
                 <!-- Connect 4 Game -->
-                <a href="https://github.com/chathunga2007/Connect_Four_Game-Assignment-OOP-" target="_blank"
-                    class="proj-card-link">
+                <a href="https://github.com/chathunga2007/Connect_Four_Game-Assignment-OOP-" target="_blank" class="proj-card-link" data-proj="connect4">
                     <div class="proj-card gradient-border reveal-scale">
                         <div class="proj-thumb">
                             <img src="assest/connect 4.png" alt="Connect 4" />
@@ -599,8 +617,7 @@
                 </a>
 
                 <!-- Flex Gym System -->
-                <a href="https://github.com/chathunga2007/Gym_Membership_Management_System-1st-Semester-Final-Project-Using-MVC-Architecture-"
-                    target="_blank" class="proj-card-link">
+                <a href="https://github.com/chathunga2007/Gym_Membership_Management_System-1st-Semester-Final-Project-Using-MVC-Architecture-" target="_blank" class="proj-card-link" data-proj="gym">
                     <div class="proj-card gradient-border reveal-scale">
                         <div class="proj-thumb">
                             <img src="assest/flex gym.png" alt="Flex Gym" />
@@ -835,7 +852,56 @@
         </div>
     </footer>
 
+    <!-- Floating FX Control Panel -->
+    <div class="fx-panel" id="fxPanel">
+        <button class="fx-panel-toggle" id="fxPanelToggle" aria-label="Toggle FX Panel">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </button>
+        <div class="fx-panel-content">
+            <h4 class="fx-panel-title"><i class="fa-solid fa-sliders"></i> FX Settings</h4>
+            
+            <div class="fx-section">
+                <span class="fx-section-label">Background Engine</span>
+                <div class="fx-options bg-options">
+                    <button class="fx-opt-btn active" data-bg="network"><i class="fa-solid fa-circle-nodes"></i> Neural Web</button>
+                    <button class="fx-opt-btn" data-bg="grid"><i class="fa-solid fa-border-all"></i> Cyber Grid</button>
+                    <button class="fx-opt-btn" data-bg="nebula"><i class="fa-solid fa-user-astronaut"></i> Cosmic Nebula</button>
+                    <button class="fx-opt-btn" data-bg="matrix"><i class="fa-solid fa-terminal"></i> Digital Rain</button>
+                    <button class="fx-opt-btn" data-bg="aurora"><i class="fa-solid fa-wave-square"></i> Aurora Waves</button>
+                </div>
+            </div>
+
+            <div class="fx-section">
+                <span class="fx-section-label">Accent Theme</span>
+                <div class="fx-colors">
+                    <button class="fx-color-btn active" data-accent="cyan" style="background: #06b6d4;" title="Cyber Cyan"></button>
+                    <button class="fx-color-btn" data-accent="purple" style="background: #a855f7;" title="Neon Purple"></button>
+                    <button class="fx-color-btn" data-accent="emerald" style="background: #10b981;" title="Matrix Emerald"></button>
+                    <button class="fx-color-btn" data-accent="crimson" style="background: #f43f5e;" title="Crimson Red"></button>
+                    <button class="fx-color-btn" data-accent="amber" style="background: #f59e0b;" title="Solar Amber"></button>
+                </div>
+            </div>
+
+            <div class="fx-section">
+                <span class="fx-section-label">Toggles</span>
+                <div class="fx-toggles">
+                    <label class="fx-switch">
+                        <span class="switch-label">Mouse Trail</span>
+                        <input type="checkbox" id="trailToggle" checked>
+                        <span class="switch-slider"></span>
+                    </label>
+                    <label class="fx-switch">
+                        <span class="switch-label">3D Tilt Cards</span>
+                        <input type="checkbox" id="tiltToggle" checked>
+                        <span class="switch-slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <button class="back-top" id="backTop"><i class="fa-solid fa-arrow-up"></i></button>
+
 
     <button class="chatbot-toggle" id="chatbotToggle"><i class="fa-solid fa-robot"></i></button>
     <div class="chatbot-window" id="chatbotWindow">
@@ -844,7 +910,27 @@
             <div class="chatbot-info">
                 <h4>Chathunga's AI Assistant</h4><span>Powered by Gemini</span>
             </div>
-            <button class="chatbot-close" id="chatbotClose"><i class="fa-solid fa-xmark"></i></button>
+            <div class="chatbot-header-btns">
+                <button class="chatbot-key-btn" id="chatbotKeyBtn" title="API Key Settings"><i class="fa-solid fa-key"></i></button>
+                <button class="chatbot-close" id="chatbotClose"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+        <!-- API Key Overlay -->
+        <div class="chatbot-key-overlay" id="chatbotKeyOverlay">
+            <div class="key-overlay-content">
+                <div class="key-icon"><i class="fa-solid fa-lock"></i></div>
+                <h3>Enter Gemini API Key</h3>
+                <p>To start chatting with the AI assistant, please provide a Google Gemini API Key. Your key is stored securely in your browser's local storage.</p>
+                <a href="https://aistudio.google.com/" target="_blank" class="key-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Get a free key from Google AI Studio</a>
+                <div class="key-input-group">
+                    <input type="password" id="chatbotKeyInput" placeholder="Enter API Key (AIzaSy...)" />
+                    <button class="key-toggle-visible" id="keyToggleVisible" type="button"><i class="fa-solid fa-eye"></i></button>
+                </div>
+                <div class="key-buttons">
+                    <button id="chatbotKeySaveBtn" class="btn-primary">Save & Connect</button>
+                    <button id="chatbotKeyCancelBtn" class="btn-outline">Cancel</button>
+                </div>
+            </div>
         </div>
         <div class="chatbot-messages" id="chatMessages">
             <div class="chat-msg bot">Hello! I'm Chathunga's AI assistant powered by Gemini. Ask me anything about his
@@ -855,6 +941,94 @@
             <button id="chatSend"><i class="fa-solid fa-paper-plane"></i></button>
         </div>
         <div class="chatbot-branding">Powered by Gemini AI</div>
+    </div>
+
+    <!-- Project Details Modal -->
+    <div class="proj-modal" id="projModal">
+        <div class="proj-modal-overlay" id="projModalOverlay"></div>
+        <div class="proj-modal-container">
+            <button class="proj-modal-close" id="projModalClose" aria-label="Close details"><i class="fa-solid fa-xmark"></i></button>
+            <div class="proj-modal-body">
+                <div class="proj-modal-left">
+                    <div class="proj-modal-gallery">
+                        <img id="projModalImg" src="" alt="Project Image">
+                        <div class="proj-modal-gallery-fallback" id="projModalFallback">👨‍💻</div>
+                    </div>
+                </div>
+                <div class="proj-modal-right">
+                    <span class="proj-modal-type" id="projModalType">Type</span>
+                    <h3 class="proj-modal-title" id="projModalTitle">Project Title</h3>
+                    <p class="proj-modal-desc" id="projModalDesc">Description</p>
+                    
+                    <div class="proj-modal-features">
+                        <h4>Key Features</h4>
+                        <ul id="projModalFeaturesList">
+                            <!-- Feature bullets injected dynamically -->
+                        </ul>
+                    </div>
+
+                    <div class="proj-modal-tech">
+                        <h4>Technologies Used</h4>
+                        <div class="proj-modal-tech-list" id="projModalTechList">
+                            <!-- Tech tags injected dynamically -->
+                        </div>
+                    </div>
+
+                    <div class="proj-modal-actions">
+                        <a href="" target="_blank" class="btn-primary" id="projModalGitLink"><i class="fa-brands fa-github"></i> GitHub Code</a>
+                        <a href="" target="_blank" class="btn-outline" id="projModalDemoLink"><i class="fa-solid fa-earth-americas"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Command Palette Overlay -->
+    <div class="palette-overlay" id="paletteOverlay">
+        <div class="palette-modal">
+            <div class="palette-header">
+                <i class="fa-solid fa-magnifying-glass palette-search-icon"></i>
+                <input type="text" id="paletteInput" placeholder="Type a command or search..." autocomplete="off" spellcheck="false" />
+                <span class="palette-esc-badge">ESC</span>
+            </div>
+            <div class="palette-body" id="paletteBody">
+                <div class="palette-results" id="paletteResults">
+                    <!-- Actions will be loaded dynamically by JS -->
+                </div>
+            </div>
+            <div class="palette-footer">
+                <span><i class="fa-solid fa-arrow-up"></i> <i class="fa-solid fa-arrow-down"></i> Navigate</span>
+                <span><i class="fa-solid fa-keyboard"></i> Enter to select</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Retro Cyber Terminal Console Overlay -->
+    <div class="terminal-overlay" id="terminalOverlay">
+        <div class="terminal-scanlines"></div>
+        <div class="terminal-header">
+            <span class="term-title"><i class="fa-solid fa-terminal"></i> CORE_DESTRUCT_CONSOLE V3.01</span>
+            <button class="term-close" id="termCloseBtn" aria-label="Close terminal"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+            <div class="terminal-output" id="terminalOutput">
+                <div class="term-line welcome">> CHATHUNGA.DEV QUANTUM CORE TERMINAL ONLINE.</div>
+                <div class="term-line">> TYPE 'help' FOR A LIST OF AVAILABLE CORE INTERFACES.</div>
+            </div>
+            <div class="terminal-input-row">
+                <span class="term-prompt">guest@chathunga.dev:~$</span>
+                <input type="text" id="terminalInput" autofocus autocomplete="off" spellcheck="false" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Red Flashing Destruct Alert Layer -->
+    <div class="destruct-alert-overlay" id="destructAlert">
+        <div class="destruct-alert-box">
+            <div class="alert-icon">⚠️</div>
+            <h2>SYSTEM MELTDOWN IN PROGRESS</h2>
+            <p>CORE INTRUSION DETECTED. RETRIEVING QUANTUM BACKUPS.</p>
+        </div>
     </div>
 
     <script src="script.js"></script>
