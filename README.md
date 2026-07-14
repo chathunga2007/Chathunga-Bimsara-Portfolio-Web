@@ -2,12 +2,7 @@
 
 Welcome to the repository of my official personal portfolio website! This project is a modern, responsive, and dynamic showcase of my skills, experiences, educational background, and portfolio of projects. Built with a focus on smooth animations, clean UI/UX, and an engaging user experience.
 
-## 🔗 Project Links & Resources
-*The following links contain the design and planning resources for this portfolio project (ITS1119-Web-Technologies-Exercise 05):*
-- **Live Preview:** [My Personal Portfolio](https://chathunga2007.github.io/My-Personal-Portfolio-WebPage/)
-- **Side Map:** [Gloomaps](https://www.gloomaps.com/fyZGFPNvmR)
-- **Wireframe:** [Diagrams.net](https://app.diagrams.net/#G1Ngnmv88UrGTSzOU7uYdSw8raLsIPDjim#%7B%22pageId%22%3A%221XPUu_R75vPcrxgwMtCx%22%7D)
-- **Portfolio Mockups:** [Figma Design](https://www.figma.com/design/lObfpoO3qAU8Heyuy43jZV/Personal-Portfolio-Mockups?node-id=173-1283&t=ALB8JsAKw1iH6GIL-1)
+- **Live Preview:** [My Personal Portfolio](https://my-official-personal-portfolio-web.vercel.app/)
 
 ## 🚀 Features & Sections
 
