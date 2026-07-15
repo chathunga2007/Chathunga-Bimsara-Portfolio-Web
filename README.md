@@ -2,7 +2,7 @@
 
 Welcome to the repository of my official personal portfolio website! This project is a modern, responsive, and dynamic showcase of my skills, experiences, educational background, and portfolio of projects. Built with a focus on smooth animations, clean UI/UX, and an engaging user experience.
 
-- **Live Preview:** [My Personal Portfolio](https://my-official-personal-portfolio-web.vercel.app/)
+- **Live Preview:** [My Personal Portfolio](https://chathunga-bimsara-portfolio-web.vercel.app/)
 
 ## 🚀 Features & Sections
 
