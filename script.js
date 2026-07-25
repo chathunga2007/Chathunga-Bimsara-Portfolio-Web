@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", function () {
 
   // Immediately apply saved accent color
@@ -1050,75 +1052,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const chatSend = document.getElementById("chatSend");
   const chatMessages = document.getElementById("chatMessages");
   
-  // API Key Overlay Elements
-  const chatbotKeyBtn = document.getElementById("chatbotKeyBtn");
-  const chatbotKeyOverlay = document.getElementById("chatbotKeyOverlay");
-  const chatbotKeyInput = document.getElementById("chatbotKeyInput");
-  const chatbotKeySaveBtn = document.getElementById("chatbotKeySaveBtn");
-  const chatbotKeyCancelBtn = document.getElementById("chatbotKeyCancelBtn");
-  const keyToggleVisible = document.getElementById("keyToggleVisible");
-
   chatbotToggle.addEventListener("click", () => {
     chatbotWindow.classList.toggle("active");
-    if (chatbotWindow.classList.contains("active")) {
-      const storedKey = localStorage.getItem("gemini_api_key");
-      if (!storedKey) {
-        chatbotKeyInput.value = "";
-        chatbotKeyOverlay.classList.add("active");
-        setTimeout(() => chatbotKeyInput.focus(), 150);
-      } else {
-        chatbotKeyOverlay.classList.remove("active");
-      }
-    }
   });
 
   chatbotClose.addEventListener("click", () => {
     chatbotWindow.classList.remove("active");
-  });
-
-  chatbotKeyBtn.addEventListener("click", () => {
-    const storedKey = localStorage.getItem("gemini_api_key");
-    chatbotKeyInput.value = storedKey || "";
-    chatbotKeyOverlay.classList.toggle("active");
-    if (chatbotKeyOverlay.classList.contains("active")) {
-      setTimeout(() => chatbotKeyInput.focus(), 150);
-    }
-  });
-
-  chatbotKeyCancelBtn.addEventListener("click", () => {
-    const storedKey = localStorage.getItem("gemini_api_key");
-    if (!storedKey) {
-      chatbotWindow.classList.remove("active");
-    } else {
-      chatbotKeyOverlay.classList.remove("active");
-    }
-  });
-
-  chatbotKeySaveBtn.addEventListener("click", saveApiKey);
-  chatbotKeyInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") saveApiKey();
-  });
-
-  function saveApiKey() {
-    const key = chatbotKeyInput.value.trim();
-    if (key) {
-      localStorage.setItem("gemini_api_key", key);
-      chatbotKeyOverlay.classList.remove("active");
-      addMessage("⚡ Gemini API key saved! How can I help you?", false);
-    } else {
-      alert("Please enter a valid Gemini API key!");
-    }
-  }
-
-  keyToggleVisible.addEventListener("click", () => {
-    const type = chatbotKeyInput.type === "password" ? "text" : "password";
-    chatbotKeyInput.type = type;
-    const icon = keyToggleVisible.querySelector("i");
-    if (type === "password") {
-      icon.className = "fa-solid fa-eye";
-    } else {
-      icon.className = "fa-solid fa-eye-slash";
-    }
   });
 
   function addMessage(text, isUser) {
@@ -1217,48 +1156,10 @@ document.addEventListener("DOMContentLoaded", function () {
     chatMessages.appendChild(typing);
     chatMessages.scrollTop = chatMessages.scrollHeight;
 
-    const apiKey = localStorage.getItem("gemini_api_key");
-    if (apiKey) {
-      try {
-        const sysInstruction = `You are the personal AI assistant for Chathunga Bimsara, a 18-year-old Undergraduate Software Engineer from Galle, Sri Lanka. You can answer any questions the user asks, including general queries, programming problems, or about Chathunga himself. Answer questions politely and intelligently. If asked about Chathunga, base your answers on his profile details: HND in Software Engineering at IJSE (2025-Present), English Diploma at SLEGA (2025), skills in Java (95%), Python (75%), JavaScript (85%), HTML/CSS (90%), MySQL (95%), PostgreSQL (70%). Direct users to download his CV or use the contact form when relevant. Keep your replies concise and very friendly.`;
-        
-        const endpoint = `https://generativelanguage.googleapis.com/v1/models/gemini-3.5-flash:generateContent?key=${apiKey}`;
-        
-        const response = await fetch(endpoint, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            contents: [
-              {
-                parts: [{ text: `${sysInstruction}\n\nUser Question: ${message}` }]
-              }
-            ]
-          })
-        });
-
-        typing.remove();
-        if (!response.ok) {
-          const errText = await response.text();
-          throw new Error(`HTTP ${response.status} - ${errText}`);
-        }
-        
-        const resData = await response.json();
-        const reply = resData.candidates?.[0]?.content?.parts?.[0]?.text || "Hmm, Gemini could not formulate a reply. Please try again.";
-        addMessage(reply, false);
-
-      } catch (err) {
-        console.error("Gemini AI API failure, falling back: ", err);
-        // Show raw error so the developer can see the exact cause
-        addMessage(`⚠️ API Error: ${err.message}. Using offline backup chatbot...\n\n` + getSmartResponse(message), false);
-      }
-    } else {
-      setTimeout(() => {
-        typing.remove();
-        addMessage("⚠️ Gemini API Key is not configured. Please add your key in script.js to enable the online chatbot. Falling back to offline responses:\n\n" + getSmartResponse(message), false);
-      }, 800 + Math.random() * 600);
-    }
+    setTimeout(() => {
+      typing.remove();
+      addMessage(getSmartResponse(message), false);
+    }, 600 + Math.random() * 400); // simulate thinking delay
   }
 
   chatSend.addEventListener("click", sendMessage);
@@ -2280,6 +2181,26 @@ document.addEventListener("DOMContentLoaded", function () {
       printTermLine("*** RUNNING ROOT ACCESS OVERRIDE... ***", "success");
       printTermLine("Welcome Admin. Type 'help' for core commands.\n");
     }, 2000);
+  }
+
+  /* ===== QUICK CONNECT WIDGET ===== */
+  const qcToggle = document.getElementById("qcToggle");
+  const qcMenu = document.getElementById("qcMenu");
+  
+  if (qcToggle && qcMenu) {
+    qcToggle.addEventListener("click", () => {
+      qcMenu.classList.toggle("active");
+      qcToggle.classList.toggle("active");
+      
+      const icon = qcToggle.querySelector("i");
+      if (qcToggle.classList.contains("active")) {
+        icon.classList.remove("fa-message");
+        icon.classList.add("fa-xmark");
+      } else {
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-message");
+      }
+    });
   }
 
 });
