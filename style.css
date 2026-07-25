@@ -75,6 +75,7 @@ body {
   position: fixed;
   pointer-events: none;
   z-index: 99998;
+  transform: translate(-50%, -50%);
   transition:
     transform 0.1s ease,
     background 0.3s;
@@ -89,12 +90,12 @@ body {
   position: fixed;
   pointer-events: none;
   z-index: 99997;
+  transform: translate(-50%, -50%);
   transition:
     transform 0.15s ease,
     width 0.3s,
     height 0.3s,
     border-color 0.3s;
-  transform: translate(-50%, -50%);
 }
 
 .cursor-dot.hovering {
@@ -1064,8 +1065,8 @@ section {
   width: 98%;
   max-width: 1400px;
   margin: 40px auto;
-  background: rgba(15, 23, 42, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 32px;
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
@@ -1193,11 +1194,11 @@ section {
 .btn-glass-outline {
   padding: 14px 30px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.03);
-  color: #fff;
+  background: rgba(128, 128, 128, 0.05);
+  color: var(--text-primary);
   font-weight: 600;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--card-border);
   backdrop-filter: blur(10px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
@@ -1206,21 +1207,21 @@ section {
 }
 
 .btn-glass-outline:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(128, 128, 128, 0.15);
+  border-color: var(--text-muted);
   transform: translateY(-4px);
 }
 
 /* Floating Glass Badges */
 .glass-badge {
   position: absolute;
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   padding: 12px 24px;
   border-radius: 30px;
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  color: #fff;
+  color: var(--text-primary);
   font-size: 0.95rem;
   font-weight: 600;
   display: flex;
@@ -1259,13 +1260,13 @@ section {
 .glass-social {
   width: 45px;
   height: 45px;
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--text-primary);
   font-size: 1.2rem;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -1867,10 +1868,11 @@ section {
 .mouse {
   width: 26px;
   height: 40px;
-  border: 2px solid rgba(255, 255, 255, 0.4);
+  border: 2px solid var(--text-muted);
   border-radius: 15px;
   position: relative;
-  display: block;
+  display: flex;
+  justify-content: center;
 }
 
 .wheel {
@@ -1878,7 +1880,7 @@ section {
   height: 8px;
   background: var(--accent-primary);
   border-radius: 2px;
-  margin: 6px auto 0;
+  margin-top: 6px;
   animation: scroll-wheel 1.5s ease infinite;
 }
 
@@ -1887,6 +1889,7 @@ section {
   color: var(--text-muted);
   letter-spacing: 2px;
   text-transform: uppercase;
+  margin-right: -2px; /* Compensate for letter-spacing to optically center the text */
 }
 
 @keyframes scroll-wheel {
@@ -4630,7 +4633,7 @@ footer {
   width: 100%;
   max-width: 950px;
   max-height: 90vh;
-  background: rgba(15, 23, 42, 0.85);
+  background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 24px;
   backdrop-filter: blur(25px);
@@ -4654,9 +4657,9 @@ footer {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--text-secondary);
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--text-muted);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -4666,7 +4669,7 @@ footer {
 }
 
 .proj-modal-close:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(128, 128, 128, 0.2);
   color: var(--text-primary);
   transform: rotate(90deg);
 }
@@ -4682,7 +4685,7 @@ footer {
   aspect-ratio: 4 / 3;
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--card-border);
   position: relative;
   background: rgba(0, 0, 0, 0.2);
 }
@@ -4763,8 +4766,8 @@ footer {
 
 .tech-badge {
   padding: 6px 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(128, 128, 128, 0.1);
+  border: 1px solid var(--card-border);
   border-radius: 8px;
   color: var(--text-secondary);
   font-size: 0.75rem;
@@ -5638,14 +5641,14 @@ footer {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  background: rgba(15, 23, 42, 0.8);
+  background: var(--card-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--card-border);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--text-primary);
   font-size: 1.1rem;
   text-decoration: none;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
