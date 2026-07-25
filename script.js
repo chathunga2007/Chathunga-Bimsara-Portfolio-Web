@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", function () {
 
   // Immediately apply saved accent color
@@ -2213,5 +2211,4 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
 });
