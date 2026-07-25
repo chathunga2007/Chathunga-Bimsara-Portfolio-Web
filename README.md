@@ -64,6 +64,10 @@ A fully functional contact form (powered by FormSubmit) and my contact details, 
 *   Dark/Light theme toggle
 *   Integrated AI Chatbot UI (Powered by Gemini)
 *   Interactive gallery with Lightbox support
+*   **[NEW]** Cybernetic scanner and HUD crosshair animations on the hero portrait
+*   **[NEW]** Interactive hover overlays on work projects with direct GitHub links
+*   **[NEW]** Brand-specific colored hover effects for social media icons
+*   **[NEW]** Dynamic theme-responsive gradient UI buttons
 
 ---
 
@@ -76,4 +80,4 @@ A fully functional contact form (powered by FormSubmit) and my contact details, 
 *   **Email:** wggachathungabimsara2007@gmail.com
 
 ---
-*© 2025 Chathunga Bimsara — All rights reserved.*
+*© 2026 Chathunga Bimsara — All rights reserved.*
