@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
@@ -14,9 +13,7 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
     <div class="cursor-dot" id="cursorDot"></div>
     <div class="cursor-ring" id="cursorRing"></div>
     <div class="scroll-progress" id="scrollProgress"></div>
@@ -29,10 +26,7 @@
         <div class="floating-shape shape-3"></div>
     </div>
 
-    <div class="aurora">
-        <div class="aurora-beam"></div>
-        <div class="aurora-beam"></div>
-        <div class="aurora-beam"></div>
+    <div class="aurora" style="display:none;">
     </div>
 
     <audio id="bgMusic" loop>
@@ -58,8 +52,10 @@
         </nav>
         <div class="header-right">
             <div class="toggles-wrapper">
-                <button class="palette-toggle" id="paletteToggleBtn" aria-label="Command Palette" title="Command Palette (Ctrl+K)"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <button class="terminal-toggle" id="terminalToggleBtn" aria-label="Open Terminal" title="Developer Terminal"><i class="fa-solid fa-terminal"></i></button>
+                <button class="palette-toggle" id="paletteToggleBtn" aria-label="Command Palette"
+                    title="Command Palette (Ctrl+K)"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="terminal-toggle" id="terminalToggleBtn" aria-label="Open Terminal"
+                    title="Developer Terminal"><i class="fa-solid fa-terminal"></i></button>
                 <button class="music-toggle" id="musicToggle" aria-label="Toggle Music"><i
                         class="fa-solid fa-volume-xmark"></i></button>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme"><i
@@ -69,72 +65,50 @@
         </div>
     </header>
 
+    <div class="global-glass-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
     <section id="hero">
-        <div class="hero-bg-grid"></div>
         <div class="section-wrap">
-            <div class="hero-content">
-                <div class="hero-left">
+            <div class="glass-hero-container" id="tilt-panel">
+                <div class="glass-hero-content reveal-left">
                     <div class="hero-tag"><span class="tag-dot"></span>Available for Opportunities</div>
                     <h1 class="hero-name">
                         <div class="glitch-wrapper">
-                            <span class="glitch-text name-gradient" data-text="Chathunga Bimsara">Chathunga
-                                Bimsara</span>
+                            <span class="glitch-text name-gradient" data-text="Chathunga Bimsara">Chathunga Bimsara</span>
                         </div>
                     </h1>
-                    <p class="hero-role">I'm a <span class="role-text" id="roleText">Software Engineer</span><span
-                            class="cursor-blink">|</span></p>
-                    <p class="hero-desc">Undergraduate Software Engineer at IJSE, Sri Lanka. Passionate about crafting
-                        elegant, functional software from pixel-perfect frontends to robust backend systems.</p>
-                    <div class="hero-socials">
-                        <a href="https://www.linkedin.com/in/chathunga-bimsara-02a728387/" target="_blank"
-                            class="hsoc linkedin" data-name="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://github.com/chathunga2007" target="_blank" class="hsoc github"
-                            data-name="GitHub"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://web.facebook.com/profile.php?id=61571681231357" target="_blank"
-                            class="hsoc facebook" data-name="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://www.youtube.com/@chathungabimsara2007" target="_blank" class="hsoc youtube"
-                            data-name="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/chathunga200711/" target="_blank" class="hsoc instagram"
-                            data-name="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://x.com/ChathungaB2007" target="_blank" class="hsoc twitter"
-                            data-name="X/Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <p class="hero-role">I'm a <span class="role-text" id="roleText">Software Engineer</span><span class="cursor-blink">|</span></p>
+                    <p class="hero-desc">Undergraduate Software Engineer at IJSE, Sri Lanka. Passionate about crafting elegant, functional software from pixel-perfect frontends to robust backend systems.</p>
+                    
+                    <div class="glass-hero-actions">
+                        <a href="assest/Chathunga Bimsara CV.pdf" download class="btn-glass-primary"><i class="fa-solid fa-download"></i> Download CV</a>
+                        <a href="https://github.com/chathunga2007" target="_blank" class="btn-glass-outline"><i class="fa-brands fa-github"></i> GITHUB PROFILE</a>
                     </div>
-                    <div class="hero-btns">
-                        <a href="assest/Chathunga Bimsara CV.pdf" download class="btn-primary"><i
-                                class="fa-solid fa-download"></i> Download CV</a>
-                        <a href="#contact" class="btn-outline"><i class="fa-solid fa-paper-plane"></i> Get In Touch</a>
+                    
+                    <!-- Glass Socials Row -->
+                    <div class="glass-socials-row">
+                        <a href="https://www.linkedin.com/in/chathunga-bimsara-02a728387/" target="_blank" class="glass-social linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/chathunga2007" target="_blank" class="glass-social github"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://web.facebook.com/profile.php?id=61571681231357" target="_blank" class="glass-social facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/@chathungabimsara2007" target="_blank" class="glass-social youtube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/chathunga200711/" target="_blank" class="glass-social instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://x.com/ChathungaB2007" target="_blank" class="glass-social twitter"><i class="fa-brands fa-x-twitter"></i></a>
                     </div>
                 </div>
-                <div class="hero-right">
-                    <div class="hero-photo-wrap">
-                        <div class="photo-ring-outer">
-                            <div class="ring-dot"></div>
-                            <div class="ring-dot"></div>
-                            <div class="ring-dot"></div>
-                            <div class="ring-dot"></div>
-                        </div>
-                        <div class="photo-ring-middle"></div>
-                        <div class="hero-photo">
-                            <img src="assest/My photo.png" alt="Chathunga Bimsara"
-                                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-                            <div class="photo-fallback">👨‍💻</div>
-                        </div>
-                        <div class="orbital-container">
-                            <div class="orbital-icon"><i class="fa-brands fa-java"></i></div>
-                            <div class="orbital-icon"><i class="fa-brands fa-python"></i></div>
-                            <div class="orbital-icon"><i class="fa-brands fa-html5"></i></div>
-                            <div class="orbital-icon"><i class="fa-solid fa-database"></i></div>
-                            <div class="orbital-icon"><i class="fa-brands fa-js"></i></div>
-                            <div class="orbital-icon"><i class="fa-brands fa-css3-alt"></i></div>
-                        </div>
+
+                <div class="glass-hero-visual reveal-right">
+                    <img src="assest/My photo.png" alt="Chathunga Bimsara" class="fading-portrait" onerror="this.style.display='none';" />
+                    
+                    <!-- Floating Glass Badges -->
+                    <div class="glass-badge badge-1">
+                        <i class="fa-brands fa-java" style="color: #ea580c;"></i> Java Expert
                     </div>
-                    <div class="hero-stats">
-                        <div class="hstat"><span class="hstat-num" data-count="3">0</span>+<span
-                                class="hstat-label">Projects</span></div>
-                        <div class="hstat"><span class="hstat-num" data-count="7">0</span>+<span
-                                class="hstat-label">Tech Skills</span></div>
-                        <div class="hstat"><span class="hstat-num" data-count="12">0</span><span
-                                class="hstat-label">Assignments</span></div>
+                    <div class="glass-badge badge-2">
+                        <i class="fa-solid fa-code" style="color: #06b6d4;"></i> Full Stack
                     </div>
                 </div>
             </div>
@@ -184,7 +158,8 @@
                         <div class="detail-card full reveal"><span class="dc-label">Email</span><span
                                 class="dc-val">wggachathungabimsara2007@gmail.com</span></div>
                         <div class="detail-card full reveal live-status-card">
-                            <span class="dc-label"><i class="fa-solid fa-clock"></i> Galle, Sri Lanka Time &amp; Status</span>
+                            <span class="dc-label"><i class="fa-solid fa-clock"></i> Galle, Sri Lanka Time &amp;
+                                Status</span>
                             <div class="live-status-wrapper">
                                 <div class="live-status-time">
                                     <span id="sriLankaTime">--:--:-- --</span>
@@ -196,12 +171,17 @@
                             </div>
                         </div>
                         <div class="detail-card full reveal github-stats-card" id="githubStatsCard">
-                            <span class="dc-label"><i class="fa-brands fa-github"></i> Live GitHub Activity (chathunga2007)</span>
+                            <span class="dc-label"><i class="fa-brands fa-github"></i> Live GitHub Activity
+                                (chathunga2007)</span>
                             <div class="gh-stats-wrapper">
-                                <div class="gh-stat-item"><span class="gh-stat-val" id="ghRepos">-</span><span class="gh-stat-lbl">Public Repos</span></div>
-                                <div class="gh-stat-item"><span class="gh-stat-val" id="ghFollowers">-</span><span class="gh-stat-lbl">Followers</span></div>
-                                <div class="gh-stat-item"><span class="gh-stat-val" id="ghStars">-</span><span class="gh-stat-lbl">Starred Repos</span></div>
-                                <div class="gh-stat-item"><span class="gh-stat-val" id="ghGists">-</span><span class="gh-stat-lbl">Gists</span></div>
+                                <div class="gh-stat-item"><span class="gh-stat-val" id="ghRepos">-</span><span
+                                        class="gh-stat-lbl">Public Repos</span></div>
+                                <div class="gh-stat-item"><span class="gh-stat-val" id="ghFollowers">-</span><span
+                                        class="gh-stat-lbl">Followers</span></div>
+                                <div class="gh-stat-item"><span class="gh-stat-val" id="ghStars">-</span><span
+                                        class="gh-stat-lbl">Starred Repos</span></div>
+                                <div class="gh-stat-item"><span class="gh-stat-val" id="ghGists">-</span><span
+                                        class="gh-stat-lbl">Gists</span></div>
                             </div>
                         </div>
                     </div>
@@ -278,169 +258,172 @@
                 <!-- Left: Skill Bars -->
                 <div class="skills-bars-col">
                     <div class="skills-tabs reveal">
-                <button class="skill-tab-btn active" data-tab="languages">Languages</button>
-                <button class="skill-tab-btn" data-tab="tools">Tools</button>
-                <button class="skill-tab-btn" data-tab="database">Databases</button>
-                <button class="skill-tab-btn" data-tab="design">Design</button>
-            </div>
-            <div class="skills-content active" id="languages">
-                <div class="skills-grid">
-                    <div class="skill-card reveal">
-                        <div class="skill-icon-wrap"><img src="assest/Skills/java_5968282.png" alt="Java"
-                                onerror="this.style.display='none';this.nextElementSibling.style.display='block';" /><span
-                                class="skill-emoji" style="display:none">☕</span></div><span
-                            class="skill-name">Java</span><span class="skill-percentage">95%</span>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-width="95"></div>
+                        <button class="skill-tab-btn active" data-tab="languages">Languages</button>
+                        <button class="skill-tab-btn" data-tab="tools">Tools</button>
+                        <button class="skill-tab-btn" data-tab="database">Databases</button>
+                        <button class="skill-tab-btn" data-tab="design">Design</button>
+                    </div>
+                    <div class="skills-content active" id="languages">
+                        <div class="skills-grid">
+                            <div class="skill-card reveal">
+                                <div class="skill-icon-wrap"><img src="assest/Skills/java_5968282.png" alt="Java"
+                                        onerror="this.style.display='none';this.nextElementSibling.style.display='block';" /><span
+                                        class="skill-emoji" style="display:none">☕</span></div><span
+                                    class="skill-name">Java</span><span class="skill-percentage">95%</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card reveal">
+                                <div class="skill-icon-wrap"><img src="assest/Skills/python_5968350.png" alt="Python"
+                                        onerror="this.style.display='none';this.nextElementSibling.style.display='block';" /><span
+                                        class="skill-emoji" style="display:none">🐍</span></div><span
+                                    class="skill-name">Python</span><span class="skill-percentage">75%</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card reveal">
+                                <div class="skill-icon-wrap"><img src="assest/Skills/javascript.png" alt="JavaScript"
+                                        onerror="this.style.display='none';this.nextElementSibling.style.display='block';" /><span
+                                        class="skill-emoji" style="display:none">⚡</span></div><span
+                                    class="skill-name">JavaScript</span><span class="skill-percentage">85%</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card reveal">
+                                <div class="skill-icon-wrap"><img src="assest/Skills/sql_7506880.png" alt="SQL"
+                                        onerror="this.style.display='none';this.nextElementSibling.style.display='block';" /><span
+                                        class="skill-emoji" style="display:none">🗄️</span></div><span
+                                    class="skill-name">SQL</span><span class="skill-percentage">80%</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card reveal">
+                                <div class="skill-icon-wrap"><img src="assest/Skills/html-5_5968267.png" alt="HTML5"
+                                        onerror="this.style.display='none';this.nextElementSibling.style.display='block';" /><span
+                                        class="skill-emoji" style="display:none">🌐</span></div><span
+                                    class="skill-name">HTML5</span><span class="skill-percentage">90%</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card reveal">
+                                <div class="skill-icon-wrap"><img src="assest/Skills/css-3_5968242.png" alt="CSS3"
+                                        onerror="this.style.display='none';this.nextElementSibling.style.display='block';" /><span
+                                        class="skill-emoji" style="display:none">🎨</span></div><span
+                                    class="skill-name">CSS</span><span class="skill-percentage">90%</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="90"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="skill-card reveal">
-                        <div class="skill-icon-wrap"><img src="assest/Skills/python_5968350.png" alt="Python"
-                                onerror="this.style.display='none';this.nextElementSibling.style.display='block';" /><span
-                                class="skill-emoji" style="display:none">🐍</span></div><span
-                            class="skill-name">Python</span><span class="skill-percentage">75%</span>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-width="75"></div>
+                    <div class="skills-content" id="tools">
+                        <div class="skills-grid">
+                            <div class="skill-card reveal">
+                                <div class="skill-icon-wrap"><img src="assest/Skills/github.png" alt="GitHub"
+                                        onerror="this.outerHTML='<span class=\'skill-emoji\'>📦</span>'" /></div><span
+                                    class="skill-name">GitHub</span><span class="skill-percentage">90%</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card reveal">
+                                <div class="skill-icon-wrap"><img src="assest/Skills/git.png" alt="Git"
+                                        onerror="this.outerHTML='<span class=\'skill-emoji\'>🌱</span>'" /></div><span
+                                    class="skill-name">Git</span><span class="skill-percentage">85%</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card reveal">
+                                <div class="skill-icon-wrap"><img src="assest/Skills/docker_919853.png" alt="Docker"
+                                        onerror="this.outerHTML='<span class=\'skill-emoji\'>🐳</span>'" /></div><span
+                                    class="skill-name">Docker</span><span class="skill-percentage">65%</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="65"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card reveal">
+                                <div class="skill-icon-wrap"><img src="assest/Skills/vscode.png" alt="VS Code"
+                                        onerror="this.outerHTML='<span class=\'skill-emoji\'>💻</span>'" /></div><span
+                                    class="skill-name">VS Code</span><span class="skill-percentage">90%</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card reveal">
+                                <div class="skill-icon-wrap"><img src="assest/Skills/intelijidea.png"
+                                        alt="IntelliJ IDEA"
+                                        onerror="this.outerHTML='<span class=\'skill-emoji\'>🧠</span>'" /></div><span
+                                    class="skill-name">IntelliJ IDEA</span><span class="skill-percentage">95%</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card reveal">
+                                <div class="skill-icon-wrap"><img src="assest/Skills/antigravity.png" alt="Antigravity"
+                                        onerror="this.outerHTML='<span class=\'skill-emoji\'>🧠</span>'" /></div><span
+                                    class="skill-name">Antigravity</span><span class="skill-percentage">100%</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="100"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="skill-card reveal">
-                        <div class="skill-icon-wrap"><img src="assest/Skills/javascript.png" alt="JavaScript"
-                                onerror="this.style.display='none';this.nextElementSibling.style.display='block';" /><span
-                                class="skill-emoji" style="display:none">⚡</span></div><span
-                            class="skill-name">JavaScript</span><span class="skill-percentage">85%</span>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-width="85"></div>
+                    <div class="skills-content" id="database">
+                        <div class="skills-grid">
+                            <div class="skill-card reveal">
+                                <div class="skill-icon-wrap"><img src="assest/Skills/mysql.png" alt="MySQL"
+                                        onerror="this.outerHTML='<span class=\'skill-emoji\'>🐬</span>'" /></div><span
+                                    class="skill-name">MySQL</span><span class="skill-percentage">95%</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card reveal">
+                                <div class="skill-icon-wrap"><img src="assest/Skills/postgre_5968342.png"
+                                        alt="PostgreSQL"
+                                        onerror="this.outerHTML='<span class=\'skill-emoji\'>🐘</span>'" /></div><span
+                                    class="skill-name">PostgreSQL</span><span class="skill-percentage">70%</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="70"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="skill-card reveal">
-                        <div class="skill-icon-wrap"><img src="assest/Skills/sql_7506880.png" alt="SQL"
-                                onerror="this.style.display='none';this.nextElementSibling.style.display='block';" /><span
-                                class="skill-emoji" style="display:none">🗄️</span></div><span
-                            class="skill-name">SQL</span><span class="skill-percentage">80%</span>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-width="80"></div>
+                    <div class="skills-content" id="design">
+                        <div class="skills-grid">
+                            <div class="skill-card reveal">
+                                <div class="skill-icon-wrap"><img src="assest/Skills/figma.png" alt="Figma"
+                                        onerror="this.outerHTML='<span class=\'skill-emoji\'>🎨</span>'" /></div><span
+                                    class="skill-name">Figma</span><span class="skill-percentage">85%</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card reveal">
+                                <div class="skill-icon-wrap"><img src="assest/Skills/photoshop.png" alt="Photoshop"
+                                        onerror="this.outerHTML='<span class=\'skill-emoji\'>🖼️</span>'" /></div><span
+                                    class="skill-name">Adobe Photoshop</span><span class="skill-percentage">70%</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="70"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card reveal">
+                                <div class="skill-icon-wrap"><img src="assest/Skills/PremierePro.png" alt="Premiere Pro"
+                                        onerror="this.outerHTML='<span class=\'skill-emoji\'>🎬</span>'" /></div><span
+                                    class="skill-name">Adobe Premiere Pro</span><span
+                                    class="skill-percentage">80%</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-width="80"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="skill-card reveal">
-                        <div class="skill-icon-wrap"><img src="assest/Skills/html-5_5968267.png" alt="HTML5"
-                                onerror="this.style.display='none';this.nextElementSibling.style.display='block';" /><span
-                                class="skill-emoji" style="display:none">🌐</span></div><span
-                            class="skill-name">HTML5</span><span class="skill-percentage">90%</span>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-width="90"></div>
-                        </div>
-                    </div>
-                    <div class="skill-card reveal">
-                        <div class="skill-icon-wrap"><img src="assest/Skills/css-3_5968242.png" alt="CSS3"
-                                onerror="this.style.display='none';this.nextElementSibling.style.display='block';" /><span
-                                class="skill-emoji" style="display:none">🎨</span></div><span
-                            class="skill-name">CSS</span><span class="skill-percentage">90%</span>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-width="90"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="skills-content" id="tools">
-                <div class="skills-grid">
-                    <div class="skill-card reveal">
-                        <div class="skill-icon-wrap"><img src="assest/Skills/github.png" alt="GitHub"
-                                onerror="this.outerHTML='<span class=\'skill-emoji\'>📦</span>'" /></div><span
-                            class="skill-name">GitHub</span><span class="skill-percentage">90%</span>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-width="90"></div>
-                        </div>
-                    </div>
-                    <div class="skill-card reveal">
-                        <div class="skill-icon-wrap"><img src="assest/Skills/git.png" alt="Git"
-                                onerror="this.outerHTML='<span class=\'skill-emoji\'>🌱</span>'" /></div><span
-                            class="skill-name">Git</span><span class="skill-percentage">85%</span>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-width="85"></div>
-                        </div>
-                    </div>
-                    <div class="skill-card reveal">
-                        <div class="skill-icon-wrap"><img src="assest/Skills/docker_919853.png" alt="Docker"
-                                onerror="this.outerHTML='<span class=\'skill-emoji\'>🐳</span>'" /></div><span
-                            class="skill-name">Docker</span><span class="skill-percentage">65%</span>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-width="65"></div>
-                        </div>
-                    </div>
-                    <div class="skill-card reveal">
-                        <div class="skill-icon-wrap"><img src="assest/Skills/vscode.png" alt="VS Code"
-                                onerror="this.outerHTML='<span class=\'skill-emoji\'>💻</span>'" /></div><span
-                            class="skill-name">VS Code</span><span class="skill-percentage">90%</span>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-width="90"></div>
-                        </div>
-                    </div>
-                    <div class="skill-card reveal">
-                        <div class="skill-icon-wrap"><img src="assest/Skills/intelijidea.png" alt="IntelliJ IDEA"
-                                onerror="this.outerHTML='<span class=\'skill-emoji\'>🧠</span>'" /></div><span
-                            class="skill-name">IntelliJ IDEA</span><span class="skill-percentage">95%</span>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-width="95"></div>
-                        </div>
-                    </div>
-                    <div class="skill-card reveal">
-                        <div class="skill-icon-wrap"><img src="assest/Skills/antigravity.png" alt="Antigravity"
-                                onerror="this.outerHTML='<span class=\'skill-emoji\'>🧠</span>'" /></div><span
-                            class="skill-name">Antigravity</span><span class="skill-percentage">100%</span>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-width="100"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="skills-content" id="database">
-                <div class="skills-grid">
-                    <div class="skill-card reveal">
-                        <div class="skill-icon-wrap"><img src="assest/Skills/mysql.png" alt="MySQL"
-                                onerror="this.outerHTML='<span class=\'skill-emoji\'>🐬</span>'" /></div><span
-                            class="skill-name">MySQL</span><span class="skill-percentage">95%</span>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-width="95"></div>
-                        </div>
-                    </div>
-                    <div class="skill-card reveal">
-                        <div class="skill-icon-wrap"><img src="assest/Skills/postgre_5968342.png" alt="PostgreSQL"
-                                onerror="this.outerHTML='<span class=\'skill-emoji\'>🐘</span>'" /></div><span
-                            class="skill-name">PostgreSQL</span><span class="skill-percentage">70%</span>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-width="70"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="skills-content" id="design">
-                <div class="skills-grid">
-                    <div class="skill-card reveal">
-                        <div class="skill-icon-wrap"><img src="assest/Skills/figma.png" alt="Figma"
-                                onerror="this.outerHTML='<span class=\'skill-emoji\'>🎨</span>'" /></div><span
-                            class="skill-name">Figma</span><span class="skill-percentage">85%</span>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-width="85"></div>
-                        </div>
-                    </div>
-                    <div class="skill-card reveal">
-                        <div class="skill-icon-wrap"><img src="assest/Skills/photoshop.png" alt="Photoshop"
-                                onerror="this.outerHTML='<span class=\'skill-emoji\'>🖼️</span>'" /></div><span
-                            class="skill-name">Adobe Photoshop</span><span class="skill-percentage">70%</span>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-width="70"></div>
-                        </div>
-                    </div>
-                    <div class="skill-card reveal">
-                        <div class="skill-icon-wrap"><img src="assest/Skills/PremierePro.png" alt="Premiere Pro"
-                                onerror="this.outerHTML='<span class=\'skill-emoji\'>🎬</span>'" /></div><span
-                            class="skill-name">Adobe Premiere Pro</span><span class="skill-percentage">80%</span>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-width="80"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
                 </div>
                 <!-- Right: 3D Skills Sphere -->
                 <div class="skills-sphere-col reveal-right">
@@ -593,7 +576,8 @@
             <div class="projects-grid">
 
                 <!-- Stock System -->
-                <a href="https://github.com/chathunga2007/PRF-Project" target="_blank" class="proj-card-link" data-proj="stock">
+                <a href="https://github.com/chathunga2007/PRF-Project" target="_blank" class="proj-card-link"
+                    data-proj="stock">
                     <div class="proj-card gradient-border reveal-scale">
                         <div class="proj-thumb">
                             <img src="assest/terminal.png" alt="Stock System" />
@@ -615,7 +599,8 @@
                 </a>
 
                 <!-- Connect 4 Game -->
-                <a href="https://github.com/chathunga2007/Connect_Four_Game-Assignment-OOP-" target="_blank" class="proj-card-link" data-proj="connect4">
+                <a href="https://github.com/chathunga2007/Connect_Four_Game-Assignment-OOP-" target="_blank"
+                    class="proj-card-link" data-proj="connect4">
                     <div class="proj-card gradient-border reveal-scale">
                         <div class="proj-thumb">
                             <img src="assest/connect 4.png" alt="Connect 4" />
@@ -637,7 +622,8 @@
                 </a>
 
                 <!-- Flex Gym System -->
-                <a href="https://github.com/chathunga2007/Gym_Membership_Management_System-1st-Semester-Final-Project-Using-MVC-Architecture-" target="_blank" class="proj-card-link" data-proj="gym">
+                <a href="https://github.com/chathunga2007/Gym_Membership_Management_System-1st-Semester-Final-Project-Using-MVC-Architecture-"
+                    target="_blank" class="proj-card-link" data-proj="gym">
                     <div class="proj-card gradient-border reveal-scale">
                         <div class="proj-thumb">
                             <img src="assest/flex gym.png" alt="Flex Gym" />
@@ -879,26 +865,35 @@
         </button>
         <div class="fx-panel-content">
             <h4 class="fx-panel-title"><i class="fa-solid fa-sliders"></i> FX Settings</h4>
-            
+
             <div class="fx-section">
                 <span class="fx-section-label">Background Engine</span>
                 <div class="fx-options bg-options">
-                    <button class="fx-opt-btn active" data-bg="network"><i class="fa-solid fa-circle-nodes"></i> Neural Web</button>
+                    <button class="fx-opt-btn active" data-bg="network"><i class="fa-solid fa-circle-nodes"></i> Neural
+                        Web</button>
                     <button class="fx-opt-btn" data-bg="grid"><i class="fa-solid fa-border-all"></i> Cyber Grid</button>
-                    <button class="fx-opt-btn" data-bg="nebula"><i class="fa-solid fa-user-astronaut"></i> Cosmic Nebula</button>
-                    <button class="fx-opt-btn" data-bg="matrix"><i class="fa-solid fa-terminal"></i> Digital Rain</button>
-                    <button class="fx-opt-btn" data-bg="aurora"><i class="fa-solid fa-wave-square"></i> Aurora Waves</button>
+                    <button class="fx-opt-btn" data-bg="nebula"><i class="fa-solid fa-user-astronaut"></i> Cosmic
+                        Nebula</button>
+                    <button class="fx-opt-btn" data-bg="matrix"><i class="fa-solid fa-terminal"></i> Digital
+                        Rain</button>
+                    <button class="fx-opt-btn" data-bg="aurora"><i class="fa-solid fa-wave-square"></i> Aurora
+                        Waves</button>
                 </div>
             </div>
 
             <div class="fx-section">
                 <span class="fx-section-label">Accent Theme</span>
                 <div class="fx-colors">
-                    <button class="fx-color-btn active" data-accent="cyan" style="background: #06b6d4;" title="Cyber Cyan"></button>
-                    <button class="fx-color-btn" data-accent="purple" style="background: #a855f7;" title="Neon Purple"></button>
-                    <button class="fx-color-btn" data-accent="emerald" style="background: #10b981;" title="Matrix Emerald"></button>
-                    <button class="fx-color-btn" data-accent="crimson" style="background: #f43f5e;" title="Crimson Red"></button>
-                    <button class="fx-color-btn" data-accent="amber" style="background: #f59e0b;" title="Solar Amber"></button>
+                    <button class="fx-color-btn active" data-accent="cyan" style="background: #06b6d4;"
+                        title="Cyber Cyan"></button>
+                    <button class="fx-color-btn" data-accent="purple" style="background: #a855f7;"
+                        title="Neon Purple"></button>
+                    <button class="fx-color-btn" data-accent="emerald" style="background: #10b981;"
+                        title="Matrix Emerald"></button>
+                    <button class="fx-color-btn" data-accent="crimson" style="background: #f43f5e;"
+                        title="Crimson Red"></button>
+                    <button class="fx-color-btn" data-accent="amber" style="background: #f59e0b;"
+                        title="Solar Amber"></button>
                 </div>
             </div>
 
@@ -933,32 +928,15 @@
         <div class="chatbot-header">
             <div class="chatbot-avatar">🤖</div>
             <div class="chatbot-info">
-                <h4>Chathunga's AI Assistant</h4><span>Powered by Gemini</span>
+                <h4>Chathunga's Assistant</h4><span>Smart Portfolio Guide</span>
             </div>
             <div class="chatbot-header-btns">
-                <button class="chatbot-key-btn" id="chatbotKeyBtn" title="API Key Settings"><i class="fa-solid fa-key"></i></button>
                 <button class="chatbot-close" id="chatbotClose"><i class="fa-solid fa-xmark"></i></button>
             </div>
         </div>
-        <!-- API Key Overlay -->
-        <div class="chatbot-key-overlay" id="chatbotKeyOverlay">
-            <div class="key-overlay-content">
-                <div class="key-icon"><i class="fa-solid fa-lock"></i></div>
-                <h3>Enter Gemini API Key</h3>
-                <p>To start chatting with the AI assistant, please provide a Google Gemini API Key. Your key is stored securely in your browser's local storage.</p>
-                <a href="https://aistudio.google.com/" target="_blank" class="key-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Get a free key from Google AI Studio</a>
-                <div class="key-input-group">
-                    <input type="password" id="chatbotKeyInput" placeholder="Enter API Key (AIzaSy...)" />
-                    <button class="key-toggle-visible" id="keyToggleVisible" type="button"><i class="fa-solid fa-eye"></i></button>
-                </div>
-                <div class="key-buttons">
-                    <button id="chatbotKeySaveBtn" class="btn-primary">Save & Connect</button>
-                    <button id="chatbotKeyCancelBtn" class="btn-outline">Cancel</button>
-                </div>
-            </div>
-        </div>
+
         <div class="chatbot-messages" id="chatMessages">
-            <div class="chat-msg bot">Hello! I'm Chathunga's AI assistant powered by Gemini. Ask me anything about his
+            <div class="chat-msg bot">Hello! I'm Chathunga's portfolio assistant. Ask me anything about his
                 skills, projects, education, or contact info!</div>
         </div>
         <div class="chatbot-pills" id="chatbotPills">
@@ -971,14 +949,15 @@
             <input type="text" id="chatInput" placeholder="Type your message..." />
             <button id="chatSend"><i class="fa-solid fa-paper-plane"></i></button>
         </div>
-        <div class="chatbot-branding">Powered by Gemini AI</div>
+        <div class="chatbot-branding">Smart Portfolio Guide</div>
     </div>
 
     <!-- Project Details Modal -->
     <div class="proj-modal" id="projModal">
         <div class="proj-modal-overlay" id="projModalOverlay"></div>
         <div class="proj-modal-container">
-            <button class="proj-modal-close" id="projModalClose" aria-label="Close details"><i class="fa-solid fa-xmark"></i></button>
+            <button class="proj-modal-close" id="projModalClose" aria-label="Close details"><i
+                    class="fa-solid fa-xmark"></i></button>
             <div class="proj-modal-body">
                 <div class="proj-modal-left">
                     <div class="proj-modal-gallery">
@@ -990,7 +969,7 @@
                     <span class="proj-modal-type" id="projModalType">Type</span>
                     <h3 class="proj-modal-title" id="projModalTitle">Project Title</h3>
                     <p class="proj-modal-desc" id="projModalDesc">Description</p>
-                    
+
                     <div class="proj-modal-features">
                         <h4>Key Features</h4>
                         <ul id="projModalFeaturesList">
@@ -1006,8 +985,10 @@
                     </div>
 
                     <div class="proj-modal-actions">
-                        <a href="" target="_blank" class="btn-primary" id="projModalGitLink"><i class="fa-brands fa-github"></i> GitHub Code</a>
-                        <a href="" target="_blank" class="btn-outline" id="projModalDemoLink"><i class="fa-solid fa-earth-americas"></i> Live Demo</a>
+                        <a href="" target="_blank" class="btn-primary" id="projModalGitLink"><i
+                                class="fa-brands fa-github"></i> GitHub Code</a>
+                        <a href="" target="_blank" class="btn-outline" id="projModalDemoLink"><i
+                                class="fa-solid fa-earth-americas"></i> Live Demo</a>
                     </div>
                 </div>
             </div>
@@ -1019,7 +1000,8 @@
         <div class="palette-modal">
             <div class="palette-header">
                 <i class="fa-solid fa-magnifying-glass palette-search-icon"></i>
-                <input type="text" id="paletteInput" placeholder="Type a command or search..." autocomplete="off" spellcheck="false" />
+                <input type="text" id="paletteInput" placeholder="Type a command or search..." autocomplete="off"
+                    spellcheck="false" />
                 <span class="palette-esc-badge">ESC</span>
             </div>
             <div class="palette-body" id="paletteBody">
@@ -1039,7 +1021,8 @@
         <div class="terminal-scanlines"></div>
         <div class="terminal-header">
             <span class="term-title"><i class="fa-solid fa-terminal"></i> CORE_DESTRUCT_CONSOLE V3.01</span>
-            <button class="term-close" id="termCloseBtn" aria-label="Close terminal"><i class="fa-solid fa-xmark"></i></button>
+            <button class="term-close" id="termCloseBtn" aria-label="Close terminal"><i
+                    class="fa-solid fa-xmark"></i></button>
         </div>
         <div class="terminal-body" id="terminalBody">
             <div class="terminal-output" id="terminalOutput">
@@ -1062,7 +1045,18 @@
         </div>
     </div>
 
+    <!-- Quick Connect Glass Widget -->
+    <div class="quick-connect-widget" id="qcWidget">
+        <div class="qc-menu" id="qcMenu">
+            <a href="mailto:[EMAIL_ADDRESS]" class="qc-item" title="Email Me"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://wa.me/94767945968" target="_blank" class="qc-item" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/in/chathunga-bimsara-02a728387/" target="_blank" class="qc-item" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <button class="qc-toggle" id="qcToggle">
+            <i class="fa-solid fa-message"></i>
+        </button>
+    </div>
+
     <script src="script.js"></script>
 </body>
-
 </html>
