@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.documentElement.setAttribute("data-accent", initAccent);
 
 
-  /* ===== SYNTHESIZED SOUND EFFECTS ENGINE ===== */
+  /* SYNTHESIZED SOUND EFFECTS ENGINE */
   let audioCtxInstance = null;
 
   function getAudioContext() {
