@@ -569,10 +569,21 @@ document.addEventListener("DOMContentLoaded", function () {
     fxPanelToggle.addEventListener("click", (e) => {
       e.stopPropagation();
       fxPanel.classList.toggle("active");
+      
+      const qcWidget = document.getElementById("qcWidget");
+      if (qcWidget) {
+        if (fxPanel.classList.contains("active")) {
+          qcWidget.classList.add("hidden");
+        } else {
+          qcWidget.classList.remove("hidden");
+        }
+      }
     });
     document.addEventListener("click", (e) => {
       if (!fxPanel.contains(e.target)) {
         fxPanel.classList.remove("active");
+        const qcWidget = document.getElementById("qcWidget");
+        if (qcWidget) qcWidget.classList.remove("hidden");
       }
     });
   }
