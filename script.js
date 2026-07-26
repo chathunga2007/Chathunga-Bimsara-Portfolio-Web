@@ -143,11 +143,10 @@ document.addEventListener("DOMContentLoaded", function () {
     cursorRing.appendChild(visor);
   }
 
+  let isHovering = false;
   document.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-    cursorDot.style.left = mouseX + "px";
-    cursorDot.style.top = mouseY + "px";
 
     const visorCoords = document.getElementById("cursorVisorCoords");
     if (visorCoords) {
@@ -171,22 +170,27 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  (function animateRing() {
+  (function animateCursor() {
+    const dotScale = isHovering ? 2.5 : 1;
+    cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%) scale(${dotScale})`;
+    
     ringX += (mouseX - ringX) * 0.15;
     ringY += (mouseY - ringY) * 0.15;
-    cursorRing.style.left = ringX + "px";
-    cursorRing.style.top = ringY + "px";
-    requestAnimationFrame(animateRing);
+    cursorRing.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+    
+    requestAnimationFrame(animateCursor);
   })();
 
   const hoverTargets = document.querySelectorAll("a, button, .hsoc, .soc-btn, .proj-card, .service-card, .skill-card, .detail-card, .assign-card, .gal-btn, .gallery-slide, .orbital-icon, .citem, .hstat");
   hoverTargets.forEach(el => {
     el.addEventListener("mouseenter", () => { 
+      isHovering = true;
       cursorDot.classList.add("hovering"); 
       cursorRing.classList.add("hovering"); 
       playSynthSFX("hover");
     });
     el.addEventListener("mouseleave", () => { 
+      isHovering = false;
       cursorDot.classList.remove("hovering"); 
       cursorRing.classList.remove("hovering"); 
     });
@@ -195,13 +199,35 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  /* ===== SCROLL PROGRESS ===== */
+  /* ===== OPTIMIZED SCROLL CONTROLLER ===== */
   const scrollProgress = document.getElementById("scrollProgress");
+  
+  let ticking = false;
   window.addEventListener("scroll", () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    scrollProgress.style.width = (scrollTop / docHeight) * 100 + "%";
-  });
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const scrollTop = window.scrollY;
+        
+        // 1. Scroll Progress
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight > 0) {
+          scrollProgress.style.width = (scrollTop / docHeight) * 100 + "%";
+        }
+        
+        // 2. Navbar Scrolled State
+        navbar.classList.toggle("scrolled", scrollTop > 100);
+        
+        // 3. Back to Top Button Visibility
+        const backTopBtn = document.getElementById("backTop");
+        if (backTopBtn) {
+          backTopBtn.classList.toggle("visible", scrollTop > 500);
+        }
+        
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
 
   /* ===== DYNAMIC BACKGROUND ENGINES ===== */
   const canvas = document.getElementById("bgCanvas");
@@ -686,21 +712,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  window.addEventListener("scroll", () => {
-    navbar.classList.toggle("scrolled", window.scrollY > 100);
+  /* ===== ACTIVE LINK HIGHLIGHTING VIA INTERSECTION OBSERVER ===== */
+  const sectionsForNav = document.querySelectorAll("section");
+  const observerOptions = {
+    root: null,
+    rootMargin: "-20% 0px -60% 0px",
+    threshold: 0
+  };
 
-    let current = "";
-    document.querySelectorAll("section").forEach(section => {
-      if (scrollY >= section.offsetTop - 150) {
-        current = section.getAttribute("id");
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const currentId = entry.target.getAttribute("id");
+        navLinks.forEach(link => {
+          link.classList.toggle("active", link.getAttribute("href") === "#" + currentId);
+        });
       }
     });
-    navLinks.forEach(link => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === "#" + current) {
-        link.classList.add("active");
-      }
-    });
+  }, observerOptions);
+
+  sectionsForNav.forEach(section => {
+    navObserver.observe(section);
   });
 
   /* ===== THEME TOGGLE ===== */
@@ -1016,7 +1048,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ===== BACK TO TOP ===== */
   const backTop = document.getElementById("backTop");
-  window.addEventListener("scroll", () => { backTop.classList.toggle("visible", window.scrollY > 500); });
   backTop.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); });
 
   /* ===== CONTACT FORM ===== */
