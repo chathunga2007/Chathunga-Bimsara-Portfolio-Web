@@ -1256,6 +1256,7 @@ section {
 }
 
 .glass-social {
+  position: relative;
   width: 45px;
   height: 45px;
   background: var(--card-bg);
@@ -1278,10 +1279,60 @@ section {
   color: #fff;
 }
 
+/* Glassmorphic custom tooltip */
+.glass-social::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  padding: 6px 12px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), var(--glow-primary);
+  z-index: 100;
+}
+
+.glass-social::after {
+  content: "";
+  position: absolute;
+  bottom: 118%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  border-width: 6px;
+  border-style: solid;
+  border-color: rgba(15, 23, 42, 0.9) transparent transparent transparent;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 100;
+}
+
+.glass-social:hover::before,
+.glass-social:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 .glass-social.linkedin:hover {
   background: #0077b5;
   border-color: #0077b5;
   box-shadow: 0 10px 25px rgba(0, 119, 181, 0.5);
+}
+.glass-social.linkedin:hover::before {
+  border-color: rgba(0, 119, 181, 0.6);
+  box-shadow: 0 4px 15px rgba(0, 119, 181, 0.3), 0 0 10px rgba(0, 119, 181, 0.4);
 }
 
 .glass-social.github:hover {
@@ -1289,11 +1340,19 @@ section {
   border-color: #333;
   box-shadow: 0 10px 25px rgba(51, 51, 51, 0.5);
 }
+.glass-social.github:hover::before {
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.1);
+}
 
 .glass-social.facebook:hover {
   background: #1877F2;
   border-color: #1877F2;
   box-shadow: 0 10px 25px rgba(24, 119, 242, 0.5);
+}
+.glass-social.facebook:hover::before {
+  border-color: rgba(24, 119, 242, 0.6);
+  box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3), 0 0 10px rgba(24, 119, 242, 0.4);
 }
 
 .glass-social.youtube:hover {
@@ -1301,17 +1360,29 @@ section {
   border-color: #FF0000;
   box-shadow: 0 10px 25px rgba(255, 0, 0, 0.5);
 }
+.glass-social.youtube:hover::before {
+  border-color: rgba(255, 0, 0, 0.6);
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3), 0 0 10px rgba(255, 0, 0, 0.4);
+}
 
 .glass-social.instagram:hover {
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   border-color: #e6683c;
   box-shadow: 0 10px 25px rgba(220, 39, 67, 0.5);
 }
+.glass-social.instagram:hover::before {
+  border-color: rgba(220, 39, 67, 0.6);
+  box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3), 0 0 10px rgba(220, 39, 67, 0.4);
+}
 
 .glass-social.twitter:hover {
   background: #000;
   border-color: #333;
   box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+}
+.glass-social.twitter:hover::before {
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15), 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .hero-tag {
