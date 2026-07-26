@@ -77,7 +77,6 @@ body {
   z-index: 99998;
   transform: translate(-50%, -50%);
   transition:
-    transform 0.1s ease,
     background 0.3s;
   mix-blend-mode: difference;
 }
@@ -92,7 +91,6 @@ body {
   z-index: 99997;
   transform: translate(-50%, -50%);
   transition:
-    transform 0.15s ease,
     width 0.3s,
     height 0.3s,
     border-color 0.3s;
