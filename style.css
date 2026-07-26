@@ -5704,9 +5704,7 @@ footer {
 @keyframes float-qc {
   0% { transform: translateY(0); }
   100% { transform: translateY(-10px); }
-}/* ==========================================================================
-   SUPIRI RESPONSIVE FIXES (Appended to ensure perfect mobile layout)
-   ========================================================================== */
+}
 
 /* Globals & Typography for Smaller Screens */
 @media (max-width: 1200px) {
@@ -5936,4 +5934,3 @@ footer {
     max-width: 100%;
   }
 }
-
