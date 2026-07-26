@@ -4640,10 +4640,12 @@ footer {
   border-radius: 24px;
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
-  padding: 40px;
+  padding: 0;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
   z-index: 1;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   transform: scale(0.9) translateY(20px);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -4680,6 +4682,9 @@ footer {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 40px;
+  padding: 40px;
+  overflow-y: auto;
+  flex: 1;
 }
 
 .proj-modal-gallery {
@@ -4794,10 +4799,11 @@ footer {
   .proj-modal-body {
     grid-template-columns: 1fr;
     gap: 25px;
+    padding: 30px 20px 20px;
   }
 
   .proj-modal-container {
-    padding: 30px 20px 20px;
+    padding: 0;
   }
 
   .proj-modal-title {
